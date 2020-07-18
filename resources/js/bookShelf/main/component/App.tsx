@@ -15,11 +15,11 @@ const App: React.FC = () => {
 			<div>
 				<Switch>
 					<Route
-						exact path="/bookshelf"
+						exact path=""
 						component={BookListPage}
 					/>
 					<Route
-						path="/bookshelf/book"
+						path="/book"
 						component={BookPage}
 					/>
 				</Switch>
