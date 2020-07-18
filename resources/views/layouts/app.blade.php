@@ -16,7 +16,7 @@
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
         @stack('js')
-        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/index.css', true) }}" rel="stylesheet">
         @stack('css')
         <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
