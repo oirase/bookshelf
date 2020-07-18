@@ -11,8 +11,8 @@
     @endpush
 @else
     @push('js')
-        <script src="{{ asset('js/index.js') }}" defer></script>
-        <script src="{{ asset('js/authView.js') }}" defer></script>
+        <script src="{{ asset('js/index.js', true) }}" defer></script>
+        <script src="{{ asset('js/authView.js', true) }}" defer></script>
         <script defer>console.log('guest')</script>
     @endpush
 @endauth
