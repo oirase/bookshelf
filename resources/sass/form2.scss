@@ -1,0 +1,57 @@
+
+.form {
+
+  display: flex;
+  flex-wrap: wrap;
+  //flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45rem;
+  height: 32rem;
+  margin: 0 auto;
+  
+  &__wrapper {
+    background: $form--bg;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    padding: 1.6rem 0;
+  }
+
+  &__label {
+    //width: 17rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 42%;
+    align-items: center;
+    background: $orange;
+    border-radius: 3px 0 0 3px;
+    color: #FFF;
+
+    &:focus {
+      background: blue;
+    }
+  }
+
+  &__text {
+    flex: 0 0 48%;
+    //width: 16rem;
+    height: 3.2rem;
+    border-radius: 0 3px 3px 0;
+    background: #FFF;
+    border: 1px solid $orange;
+    padding: 0 5px;
+
+  }
+
+  &__button {
+    height: 4.2rem;
+    padding: 0 1.6rem;
+    background: $orange;
+    border-radius: 5px;
+    color: #FFF;
+    border: 1px solid #FFF;
+  }
+
+}

@@ -1,0 +1,57 @@
+
+@mixin box($width, $height: null){
+    width: $width;
+    height: if($height, $height, $width);
+}
+
+@mixin color($color, $background) {
+  color: $color;
+  background: $background;
+}
+
+@mixin position($position, $top: null, $left: null, $bottom: null, $right: null){
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin base-button {
+  @include color(#FFF, #33CCCC);
+  //@include centering;
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding: 0.8em 1em;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+@mixin round-button {
+  @include base-button;
+  border: 0.3rem solid #FFF;
+  border-radius: 4rem;
+  box-shadow: $base-shadow;
+}
+
+@mixin rect-button {
+  @include base-button;
+  border: 0.2rem solid #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 0.2rem #33CCCC, $base-shadow;
+}
+
+@mixin error-message{
+  color: red;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 2;
+  padding: 0 2rem;
+}

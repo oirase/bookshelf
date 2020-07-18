@@ -1,0 +1,53 @@
+
+.header {
+  color: #FFF;
+  background: $yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0 1.8rem 0;
+  height: 9rem;
+}
+
+.title {
+    font-size: 3.8rem;
+    font-family: Verdana;
+    font-weight: normal;
+    position: relative;
+    width: 24rem;
+    text-align: center;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: #FFF;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+    }
+}
+
+.auth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 26rem;
+
+  
+  @at-root %auth__button {
+    font-size: 2.4rem;
+    color: #FFF;
+    font-weight: bold;
+  }
+
+  &__button--register {
+    @extend %auth__button;
+  }
+
+  &__button--login {
+    @extend %auth__button;
+  }
+
+}
