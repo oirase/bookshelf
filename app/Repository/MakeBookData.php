@@ -43,7 +43,8 @@ class MakeBookData {
         $bookList = $bookData["items"];
         $items = [];
         $count = count($bookList);
-        return 'search result';
+        //return 'search result';
+    try {
         for($i=0; $i<$count; $i++) {
             $items[$i]["bookId"] = $bookList[$i]["id"];
             $bookList[$i] = $bookList[$i]["volumeInfo"];
@@ -88,6 +89,9 @@ class MakeBookData {
             }
         }
         $result["items"] = $items;
+    } catch (\Exception $e) {
+        return $e;
+    }
 
 
         return $result;
