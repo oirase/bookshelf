@@ -19,13 +19,14 @@ class UserBookController extends Controller
     public function __construct(Request $request) {
 
 
-        /*
-        $this->middleware(function ($request, $next){
-            $this->userId = \Auth::user()->user_id;
-            return $next($request);
-        });
-        */
-        $this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
+        if(Auth::check()) {
+            $this->middleware(function ($request, $next){
+                $this->userId = \Auth::user()->user_id;
+                return $next($request);
+            });
+        }
+        
+        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
         $this->limit = 20;
     }
 
