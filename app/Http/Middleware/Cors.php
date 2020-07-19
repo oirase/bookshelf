@@ -17,7 +17,7 @@ class Cors
     {
         echo('cros');
         return $next($request)
-        ->header('Access-Control-Allow-origin', '*')
+        ->header('Access-Control-Allow-Origin', '*')
         //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
         //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/')
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
