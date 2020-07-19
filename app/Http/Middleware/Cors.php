@@ -16,6 +16,8 @@ class Cors
     public function handle($request, Closure $next)
     {
         return $next($request)
-        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/user');
+        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/user')
+        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
+        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/');
     }
 }
