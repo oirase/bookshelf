@@ -16,9 +16,9 @@ class Cors
     public function handle($request, Closure $next)
     {
         return $next($request)
-        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/user')
-        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
-        ->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/')
+        ->header('Access-Control-Allow-origin', '*')
+        //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
+        //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/')
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
         ->header('Access-Control-Allow-Headers', 'Content-Type');
     }
