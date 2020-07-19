@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('resources/js/bookShelf/index.tsx', 'public/js')
+mix.ts('resources/js/index.ts', 'public/js')
    .ts('resources/js/authView.tsx', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .sass('resources/sass/index.scss', 'public/css')
