@@ -29,13 +29,15 @@ class MakeBookData {
                 return $result;
             }
             
-            throw new \Exception('Error Processing Request');
+            //throw new \Exception('Error Processing Request');
+            return $e;
         }
 
         if($SelectPage > 1 && !array_key_exists('items', $bookData)){
             $result["items"] = [];
             return $result;
         }
+        return 'search error';
         $result["totalItems"] = $bookData["totalItems"];
 
         $bookList = $bookData["items"];
