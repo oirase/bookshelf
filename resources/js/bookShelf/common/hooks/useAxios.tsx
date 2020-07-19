@@ -6,9 +6,13 @@ interface Query {
   [key: string]: string
 }
 
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-
 const root = 'https://bookshelf-booksearch.herokuapp.com/'
+
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
+
 
 const makeFormData = (data: Query): {} => {
 	const formData = new FormData()
