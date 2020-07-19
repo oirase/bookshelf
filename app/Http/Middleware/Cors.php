@@ -15,6 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
+        echo('cros');
         return $next($request)
         ->header('Access-Control-Allow-origin', '*')
         //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
