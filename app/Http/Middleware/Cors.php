@@ -20,7 +20,7 @@ class Cors
         //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com')
         //->header('Access-Control-Allow-origin', 'https://bookshelf-booksearch.herokuapp.com/')
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-        ->header('Access-Control-Allow-Headers', 'Content-Type')
+        //->header('Access-Control-Allow-Headers', 'Content-Type')
         ->header('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
         ->header('Access-Control-Allow-Credentials', true);
     }
