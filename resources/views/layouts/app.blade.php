@@ -15,7 +15,6 @@
         <meta name="Twitter:site" content="{{ route('index') }}">
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         @stack('js')
         <link href="{{ asset('css/index.css', true) }}" rel="stylesheet">
         @stack('css')
