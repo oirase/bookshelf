@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use DB;
 
 class CheckDBConnection
 {
@@ -16,5 +17,14 @@ class CheckDBConnection
     public function handle($request, Closure $next)
     {
         return $next($request);
+        try {
+            DB::connection()->getPdo();
+            if(DB::connection()->getDatabaseName())
+            {
+                echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+            }
+        } catch (\Exception $e) {
+            die('database error');
+        }
     }
 }
