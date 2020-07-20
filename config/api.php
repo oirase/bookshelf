@@ -13,4 +13,4 @@ return [
             "title", "authors", "publisher", "publishedDate", "description", "industryIdentifiers", "pageCount", "imageLinks"
         ] 
     ]
-];
+];http://books.google.com/books/content?id=jQnsAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
