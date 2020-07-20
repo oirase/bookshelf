@@ -19,7 +19,7 @@ Route::get('/test', 'TestController@index')->name('test');
 
 Route::get('/mail', 'TestController@previewMail');
 
-Route::get('/', 'IndexController@index')->middleware('cors')->name('index');
+Route::get('/', 'IndexController@index')->middleware('checkDB')->name('index');
 
 Route::post('/search', 'SearchBookController@getData')->name('search');
 
