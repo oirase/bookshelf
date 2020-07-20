@@ -32,7 +32,8 @@ class UserBookController extends Controller
 
     public function getUserBookList(Request $request)
     {
-        
+
+        return null;
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
