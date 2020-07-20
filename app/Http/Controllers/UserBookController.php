@@ -18,26 +18,21 @@ class UserBookController extends Controller
 
     public function __construct(Request $request) {
 
-        /*
-        if(Auth::check()) {
-            $this->middleware(function ($request, $next){
-                $this->userId = \Auth::user()->user_id;
-                return $next($request);
-            });
-        }
-        */
-        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
-        $this->userId = MemberInfo::value('user_id');
-        $this->limit = 20;
 
+        /*
+        $this->middleware(function ($request, $next){
+            $this->userId = \Auth::user()->user_id;
+            return $next($request);
+        });
+        */
+        $this->userId = MemberInfo::value('user_Id');
+        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
+        $this->limit = 20;
     }
 
     public function getUserBookList(Request $request)
     {
-        //return null;
         
-        //return $this->uerId;
-
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
@@ -73,7 +68,6 @@ class UserBookController extends Controller
         
         return $result;
 
-        //return null;
     }
 
     public function searchUserBookList(Request $request)
