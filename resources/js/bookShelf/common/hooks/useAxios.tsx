@@ -46,6 +46,7 @@ export const post = (url: string, data: {}) => {
     
 		dispatch(LodingStart())
 		const res = await axios.post(url, formData)
+		console.log(res)
 		dispatch(LodingEnd())
 		return res.data
 	}

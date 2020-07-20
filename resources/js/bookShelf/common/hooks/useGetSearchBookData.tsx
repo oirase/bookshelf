@@ -33,6 +33,7 @@ const useGetSearchBookData = () => {
 			.catch(error => {
         
 				dispatch(getBookDataError())
+				console.log(error)
 			})
 	}
 
