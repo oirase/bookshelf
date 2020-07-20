@@ -35,6 +35,7 @@ class UserBookController extends Controller
     public function getUserBookList(Request $request)
     {
         return null;
+        /*
         return $this->uerId;
 
         $SelectPage = $request->selectPage;
@@ -71,7 +72,7 @@ class UserBookController extends Controller
         $result["totalItems"] = count($bookId);
         
         return $result;
-
+*/
         //return null;
     }
 
