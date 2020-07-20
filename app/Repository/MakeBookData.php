@@ -47,7 +47,7 @@ class MakeBookData {
     } catch(\Exception $e) {
         return $e;
     }
-    return 'search result';
+    //return 'search result';
     try {
         for($i=0; $i<$count; $i++) {
             $items[$i]["bookId"] = $bookList[$i]["id"];
