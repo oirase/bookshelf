@@ -16,7 +16,10 @@ class CheckDBConnection
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        $response = $next($request);
+
+        echo 'CheckDBConnection';
+        
         try {
             DB::connection()->getPdo();
             if(DB::connection()->getDatabaseName())
@@ -26,5 +29,6 @@ class CheckDBConnection
         } catch (\Exception $e) {
             die('database error');
         }
+        return $response;
     }
 }
