@@ -19,7 +19,7 @@ class UserBookController extends Controller
     public function __construct(Request $request) {
 
 
-        if(Auth::check()) {
+        if(\Auth::check()) {
             $this->middleware(function ($request, $next){
                 $this->userId = \Auth::user()->user_id;
                 return $next($request);
