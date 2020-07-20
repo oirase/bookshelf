@@ -23,8 +23,8 @@ Route::get('/', 'IndexController@index')->middleware('checkDB')->name('index');
 
 Route::post('/search', 'SearchBookController@getData')->name('search');
 
-//Route::post('/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
-Route::match(['options', 'post'],'/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
+Route::post('/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
+//Route::match(['options', 'post'],'/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
 
 Route::post('/user/search', 'UserBookController@searchUserBookList')->name('user/search');
 
