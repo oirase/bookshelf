@@ -25,8 +25,8 @@ class UserBookController extends Controller
             return $next($request);
         });
         */
-        $this->userId = MemberInfo::value('user_Id');
-        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
+        //$this->userId = MemberInfo::value('user_Id');
+        $this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
         $this->limit = 20;
     }
 
