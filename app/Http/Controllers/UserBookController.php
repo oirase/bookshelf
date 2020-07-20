@@ -27,14 +27,14 @@ class UserBookController extends Controller
         }
         */
         //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
-        $this->uerId = MemberInfo::value('user_id');
+        //$this->uerId = MemberInfo::value('user_id');
         $this->limit = 20;
 
     }
 
     public function getUserBookList(Request $request)
     {
-        
+        return null;
         return $this->uerId;
 
         $SelectPage = $request->selectPage;
