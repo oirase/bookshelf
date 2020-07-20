@@ -10,7 +10,7 @@ class SearchBookController extends Controller
 
     public function getData(Request $request)
     {
-        
+        return null;
         $data = app('makeBookData')->googleBooks($request->searchWord, $request->selectPage, 20, $request->order);
         
         return $data;
