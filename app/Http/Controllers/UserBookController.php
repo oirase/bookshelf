@@ -150,7 +150,7 @@ class UserBookController extends Controller
 
     public function deleteBook(request $request)
     {
-        return 'deleteBook'
+        return 'deleteBook';
         /*
         $bookId = $request->bookId;
         MemberInfo::where([
