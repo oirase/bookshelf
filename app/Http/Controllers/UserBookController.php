@@ -27,16 +27,16 @@ class UserBookController extends Controller
         }
         */
         //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
-        //$this->uerId = MemberInfo::value('user_id');
+        $this->userId = MemberInfo::value('user_id');
         $this->limit = 20;
 
     }
 
     public function getUserBookList(Request $request)
     {
-        return null;
-        /*
-        return $this->uerId;
+        //return null;
+        
+        //return $this->uerId;
 
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
@@ -72,7 +72,7 @@ class UserBookController extends Controller
         $result["totalItems"] = count($bookId);
         
         return $result;
-*/
+
         //return null;
     }
 
