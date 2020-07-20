@@ -38,12 +38,16 @@ class MakeBookData {
             return $result;
         }
         //return 'search error';
+    try {
         $result["totalItems"] = $bookData["totalItems"];
 
         $bookList = $bookData["items"];
         $items = [];
         $count = count($bookList);
-        //return 'search result';
+    } catch(\Exception $e) {
+        return $e;
+    }
+    return 'search result';
     try {
         for($i=0; $i<$count; $i++) {
             $items[$i]["bookId"] = $bookList[$i]["id"];
