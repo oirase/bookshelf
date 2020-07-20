@@ -80,9 +80,10 @@ class MakeBookData {
                         
                         break;
                     case "imageLinks":
-                        $items[$i]["thumbnail"] = str_replace('http', 'https', $value["thumbnail"]);
-
-                        $items[$i]["smallThumbnail"] = str_replace('http', 'https', $value["smallThumbnail"]);
+                        //$items[$i]["thumbnail"] = str_replace('http', 'https', $value["thumbnail"]);
+                        //$items[$i]["smallThumbnail"] = str_replace('http', 'https', $value["smallThumbnail"]);
+                        $items[$i]["thumbnail"] = $value["thumbnail"];
+                        $items[$i]["smallThumbnail"] = $value["smallThumbnail"];
                         break;
                     default:
                         $items[$i][$info] = $value;
