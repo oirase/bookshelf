@@ -26,14 +26,15 @@ class UserBookController extends Controller
         });
         */
         //$this->userId = MemberInfo::value('user_Id');
-        $this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
-        $this->limit = 20;
+        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
+        //$this->limit = 20;
     }
 
     public function getUserBookList(Request $request)
     {
 
-        return null;
+        return 'getUserBookList';
+        /*
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
@@ -68,12 +69,15 @@ class UserBookController extends Controller
         $result["totalItems"] = count($bookId);
         
         return $result;
+        */
 
     }
 
     public function searchUserBookList(Request $request)
     {
+        return 'searchUserBookList';
 
+        /*
         $searchWord = $request->searchWord;
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
@@ -111,10 +115,13 @@ class UserBookController extends Controller
 
         
         return $result;
+        */
     }
 
     public function addBook(request $request)
     {
+        return 'addBook';
+        /*
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
         $column = array_diff($column, ['id', 'created_at']);
@@ -138,11 +145,13 @@ class UserBookController extends Controller
 
         MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
         return 'success';
+        */
     }
 
     public function deleteBook(request $request)
     {
-
+        return 'deleteBook'
+        /*
         $bookId = $request->bookId;
         MemberInfo::where([
             ['user_id', $this->userId],
@@ -152,6 +161,7 @@ class UserBookController extends Controller
         if (MemberInfo::where('book_id', $bookId)->doesntExist()) {
             Book::where('book_id', $bookId)->delete();
         }
+        */
 
         return 'success';
     }
