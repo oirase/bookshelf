@@ -33,7 +33,10 @@ class UserBookController extends Controller
 
     public function getUserBookList(Request $request)
     {
-        $columns = Schema::getColumnListing('users');
+        $columns = [];
+        $columns['users'] = Schema::getColumnListing('users');
+        $columns['books'] = Schema::getColumnListing('books');
+        $columns['member_info'] = Schema::getColumnListing('member_info');
         dd($columns);
         //return 'getUserBookList';
         /*
