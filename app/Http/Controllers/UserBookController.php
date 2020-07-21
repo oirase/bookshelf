@@ -35,7 +35,7 @@ class UserBookController extends Controller
     {
         /*
         $columns = [];
-        $columns['users'] = Schema::getColumnListing('users');
+        $columnus['sers'] = Schema::getColumnListing('users');
         $columns['books'] = Schema::getColumnListing('books');
         $columns['member_info'] = Schema::getColumnListing('member_info');
         dd($columns);
@@ -151,9 +151,9 @@ class UserBookController extends Controller
         if (Book::where('book_id', $book["book_id"])->doesntExist()) {
             Book::insert($book);
         }
-        /*
+        
         MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
-        */
+        
         return 'success';
         
     }
