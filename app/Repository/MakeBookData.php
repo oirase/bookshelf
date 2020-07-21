@@ -90,7 +90,7 @@ class MakeBookData {
                             $items[$i]["thumbnail"] = str_replace('http', 'https', $value["thumbnail"]);
                             $items[$i]["smallThumbnail"] = str_replace('http', 'https', $value["smallThumbnail"]);
                         } catch(\Exception $e) {
-                            return $e;
+                            return [];
                         }
                         break;
                     default:
