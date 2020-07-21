@@ -31,7 +31,9 @@ Route::get('/user', 'UserBookController@getUserBookList');
 
 Route::post('/user/search', 'UserBookController@searchUserBookList')->name('user/search');
 
+Route::get('/insert', 'MethodTestController@addBook');
 Route::post('/insert', 'UserBookController@addBook')->name('insert');
+
 
 Route::post('/delete', 'UserBookController@deleteBook')->name('delete');
 
