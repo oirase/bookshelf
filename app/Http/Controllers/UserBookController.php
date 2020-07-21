@@ -132,6 +132,7 @@ class UserBookController extends Controller
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
         $column = array_diff($column, ['id', 'created_at']);
+        /*
         if (is_array($addBook['authors'])) {
             $addBook['authors'] = implode(', ', $addBook['authors']);
         }
@@ -151,6 +152,7 @@ class UserBookController extends Controller
         }
 
         MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
+        */
         return 'success';
         
     }
