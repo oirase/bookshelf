@@ -33,13 +33,15 @@ class UserBookController extends Controller
 
     public function getUserBookList(Request $request)
     {
+        /*
         $columns = [];
         $columns['users'] = Schema::getColumnListing('users');
         $columns['books'] = Schema::getColumnListing('books');
         $columns['member_info'] = Schema::getColumnListing('member_info');
         dd($columns);
+        */
         //return 'getUserBookList';
-        /*
+        
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
@@ -74,7 +76,7 @@ class UserBookController extends Controller
         $result["totalItems"] = count($bookId);
         
         return $result;
-        */        
+               
 
     }
 
