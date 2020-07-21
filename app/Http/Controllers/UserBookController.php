@@ -132,7 +132,7 @@ class UserBookController extends Controller
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
         $column = array_diff($column, ['id', 'created_at']);
-        /*
+        
         if (is_array($addBook['authors'])) {
             $addBook['authors'] = implode(', ', $addBook['authors']);
         }
@@ -147,6 +147,7 @@ class UserBookController extends Controller
                 $book[$value] = '';
             }
         }
+        /*
         if (Book::where('book_id', $book["book_id"])->doesntExist()) {
             Book::insert($book);
         }
