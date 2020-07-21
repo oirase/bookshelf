@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MemberInfo;
+use App\Book;
+use App\User;
 
 class MethodTestController extends Controller
 {
@@ -13,9 +15,9 @@ class MethodTestController extends Controller
 
     public function __construct(Request $request) {
 
-        $this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
-        $this->bookId = '100';
-        $this->limit = 20;
+        $this->userId = User::value('user_id');
+        $this->bookId = Book::value('book_id');
+
     }
 
     public function addBook() {
