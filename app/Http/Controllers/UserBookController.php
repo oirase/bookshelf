@@ -147,11 +147,11 @@ class UserBookController extends Controller
                 $book[$value] = '';
             }
         }
-        /*
+
         if (Book::where('book_id', $book["book_id"])->doesntExist()) {
             Book::insert($book);
         }
-
+        /*
         MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
         */
         return 'success';
