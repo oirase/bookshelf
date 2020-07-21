@@ -22,6 +22,7 @@ Route::get('/mail', 'TestController@previewMail');
 Route::get('/', 'IndexController@index')->middleware('checkDB')->name('index');
 
 Route::post('/search', 'SearchBookController@getData')->name('search');
+Route::get('/search', 'SearchBookController@getData');
 
 Route::post('/user', 'UserBookController@getUserBookList')->name('user');
 Route::get('/user', 'UserBookController@getUserBookList');
