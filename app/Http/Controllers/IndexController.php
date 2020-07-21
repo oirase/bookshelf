@@ -10,6 +10,8 @@ class IndexController extends Controller
     {   
         if(\Auth::check()) {
             echo \Auth::user()->user_id;
+        } else {
+            echo 'guest';
         }
         return view('index');
     }
