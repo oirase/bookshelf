@@ -8,6 +8,9 @@ class IndexController extends Controller
 {
         public function index()
     {   
+        if(\Auth::check()) {
+            echo \Auth::user()->user_id;
+        }
         return view('index');
     }
 }
