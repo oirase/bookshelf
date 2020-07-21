@@ -30,6 +30,6 @@ class AppServiceProvider extends ServiceProvider
             \URL::forceShema('https');
         }
         */
-        $url->forceSchema('https');
+        $url->forceScheme('https');
     }
 }
