@@ -128,7 +128,7 @@ class UserBookController extends Controller
     public function addBook(request $request)
     {
         return 'addBook';
-        /*
+        
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
         $column = array_diff($column, ['id', 'created_at']);
@@ -152,7 +152,7 @@ class UserBookController extends Controller
 
         MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
         return 'success';
-        */
+        
     }
 
     public function deleteBook(request $request)
