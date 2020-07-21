@@ -127,7 +127,7 @@ class UserBookController extends Controller
 
     public function addBook(request $request)
     {
-        return 'addBook';
+        //return 'addBook';
         
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
