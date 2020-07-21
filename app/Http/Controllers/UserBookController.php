@@ -45,10 +45,10 @@ class UserBookController extends Controller
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
-        //$column = ['books.book_id as bookId', 'isbn', 'title', 'authors', 'published_date as publishedDate', 'page_count as pageCount', 'description', 'thumbnail', 'small_thumbnail as smallThumbnail'];
+        $column = ['books.book_id as bookId', 'isbn', 'title', 'authors', 'published_date as publishedDate', 'page_count as pageCount', 'description', 'thumbnail', 'small_thumbnail as smallThumbnail'];
         if($request->order == 'created_at DESC' || $request->order == 'created_at ASC') {
             $bookId = MemberInfo::where('user_id', $this->userId)->orderByRaw($request->order)->pluck('book_id');
-            $bookData = Book::select('isbn')->join('member_info', 'books.book_id', '=', 'member_info.book_id')
+            $bookData = Book::select($column)->join('member_info', 'books.book_id', '=', 'member_info.book_id')
                                         ->where('member_info.user_id', $this->userId)
                                         ->orderByRaw("member_info.{$request->order}")
                                          ->offset($offset)
@@ -58,7 +58,7 @@ class UserBookController extends Controller
 
         } else {
             $bookId = MemberInfo::where('user_id', $this->userId)->pluck('book_id');
-            $bookData = Book::select('isbn')->whereIn('book_id', $bookId)
+            $bookData = Book::select($column)->whereIn('book_id', $bookId)
                                          ->offset($offset)
                                          ->limit($limit)
                                          ->orderByRaw($request->order)
