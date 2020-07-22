@@ -22,6 +22,7 @@ class UserBookController extends Controller
         if(\Auth::check()) {
             $this->middleware(function ($request, $next){
                 $this->userId = \Auth::user()->user_id;
+                echo "<br>{$this->userId}";
                 return $next($request);
             });
         }
