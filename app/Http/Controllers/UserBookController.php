@@ -16,8 +16,9 @@ class UserBookController extends Controller
 
     public $limit;
 
-    public function __construct(Request $request) {
-
+    public function __construct(Request $request) 
+    {
+        /*
         try {
         //if(\Auth::check()) {
             $this->middleware(function ($request, $next){
@@ -29,6 +30,7 @@ class UserBookController extends Controller
             return $e;
         }
         //}
+        */
         
         //$this->userId = MemberInfo::value('user_Id');
         //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
@@ -132,7 +134,7 @@ class UserBookController extends Controller
     public function addBook(request $request)
     {
         //return 'addBook';
-        
+        $this->userId = \Auth::user()->user_id;
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
         $column = array_diff($column, ['id', 'created_at']);
