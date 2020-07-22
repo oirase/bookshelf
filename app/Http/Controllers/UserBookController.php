@@ -88,9 +88,9 @@ class UserBookController extends Controller
 
     public function searchUserBookList(Request $request)
     {
-        return 'searchUserBookList';
+        //return 'searchUserBookList';
 
-        /*
+        $this->userId = \Auth::user()->user_id;
         $searchWord = $request->searchWord;
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
@@ -128,7 +128,7 @@ class UserBookController extends Controller
 
         
         return $result;
-        */
+        
     }
 
     public function addBook(request $request)
