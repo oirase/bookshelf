@@ -169,8 +169,8 @@ class UserBookController extends Controller
 
     public function deleteBook(request $request)
     {
-        return 'deleteBook';
-        /*
+        //return 'deleteBook';
+        $this->userId = \Auth::user()->user_id;
         $bookId = $request->bookId;
         MemberInfo::where([
             ['user_id', $this->userId],
@@ -180,7 +180,7 @@ class UserBookController extends Controller
         if (MemberInfo::where('book_id', $bookId)->doesntExist()) {
             Book::where('book_id', $bookId)->delete();
         }
-        */
+        
 
         return 'success';
     }
