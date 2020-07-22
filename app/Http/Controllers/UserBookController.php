@@ -47,7 +47,7 @@ class UserBookController extends Controller
         dd($columns);
         */
         //return 'getUserBookList';
-        
+        $this->userId = \Auth::user()->user_id;
         $SelectPage = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($SelectPage - 1) * $limit;
