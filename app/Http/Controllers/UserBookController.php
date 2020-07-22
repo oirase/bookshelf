@@ -18,13 +18,16 @@ class UserBookController extends Controller
 
     public function __construct(Request $request) {
 
-
+        try {
         //if(\Auth::check()) {
             $this->middleware(function ($request, $next){
                 $this->userId = \Auth::user()->user_id;
                 //echo "<br>{$this->userId}";
                 return $next($request);
             });
+        } catch (\Exception $e) {
+            return $e;
+        }
         //}
         
         //$this->userId = MemberInfo::value('user_Id');
