@@ -20,13 +20,13 @@ const useAddBook = (book: BookType) => {
 
 		axios()
 			.then(res => {
-      
+      	console.log(res)
 				dispatch(addUserBookIdList(book.bookId))
 				dispatch(updateUserBookList())
 				errorMessage && dispatch(clearError()) 
 			})
 			.catch(error=> {
-      
+      	console.log(error)
 				dispatch(changeBookError())
 			})
 
