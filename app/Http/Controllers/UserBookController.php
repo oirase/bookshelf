@@ -24,8 +24,8 @@ class UserBookController extends Controller
                 $this->userId = \Auth::user()->user_id;
                 //echo "<br>{$this->userId}";
                 return $next($request);
-        //    });
-        }
+            });
+        //}
         
         //$this->userId = MemberInfo::value('user_Id');
         //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
