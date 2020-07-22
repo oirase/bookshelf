@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'user_id' => 'a1'
+            'user_id' => Str::uuid()
         ]);
     }
 }
