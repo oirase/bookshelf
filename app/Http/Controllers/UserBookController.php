@@ -134,6 +134,7 @@ class UserBookController extends Controller
     public function addBook(request $request)
     {
         //return 'addBook';
+        try {
         $this->userId = \Auth::user()->user_id;
         $addBook = json_decode($request->addBook, true);
         $column = Schema::getColumnListing('books');
@@ -157,7 +158,7 @@ class UserBookController extends Controller
         if (Book::where('book_id', $book["book_id"])->doesntExist()) {
             Book::insert($book);
         }
-        try {
+
             MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
         } catch (\Exception $e) {
             return $e;
