@@ -151,9 +151,11 @@ class UserBookController extends Controller
         if (Book::where('book_id', $book["book_id"])->doesntExist()) {
             Book::insert($book);
         }
-        
-        MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
-        
+        try {
+            MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
+        } catch (\Exception $e) {
+            return $e;
+        }
         return 'success';
         
     }
