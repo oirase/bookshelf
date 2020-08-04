@@ -41413,9 +41413,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
 var Loding = function () {
     var lodingState = react_redux_1.useSelector(function (state) { return state.LodingState; });
-    return lodingState ? React.createElement("img", { src: "http://networkdesign.s1005.xrea.com/bookshelf/image/89-32.gif" }) : null;
+    return lodingState ? React.createElement("img", { src: config_1.lodingImage }) : null;
 };
 exports.default = Loding;
 
@@ -41513,6 +41514,24 @@ var Paginate = React.memo(function (_a) {
 });
 exports.default = Paginate;
 var templateObject_1, templateObject_2, templateObject_3;
+
+
+/***/ }),
+
+/***/ "./resources/js/bookShelf/common/config/index.tsx":
+/*!********************************************************!*\
+  !*** ./resources/js/bookShelf/common/config/index.tsx ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+//export const root = 'http://networkdesign.s1005.xrea.com/bookshelf'
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.lodingImage = exports.root = void 0;
+exports.root = 'https://bookshelf-booksearch.herokuapp.com';
+exports.lodingImage = exports.root + "/image/89-32.gif";
 
 
 /***/ }),
@@ -42189,16 +42208,8 @@ var App = function () {
     return (react_1.default.createElement(react_router_dom_1.BrowserRouter, null,
         react_1.default.createElement("div", null,
             react_1.default.createElement(react_router_dom_1.Switch, null,
-                react_1.default.createElement(react_router_dom_1.Route
-                //exact path="/bookshelf"
-                , { 
-                    //exact path="/bookshelf"
-                    exact: true, path: "/", component: BookListPage_1.default }),
-                react_1.default.createElement(react_router_dom_1.Route
-                //path="/bookshelf/book"
-                , { 
-                    //path="/bookshelf/book"
-                    path: "/book", component: BookPage_1.default })))));
+                react_1.default.createElement(react_router_dom_1.Route, { exact: true, path: "", component: BookListPage_1.default }),
+                react_1.default.createElement(react_router_dom_1.Route, { path: "/book", component: BookPage_1.default })))));
 };
 exports.default = App;
 
