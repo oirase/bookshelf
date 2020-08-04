@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (in_array(config('app.env'),['prd', 'stg'], true)){
+            \URL::forceShema('https');
+        }
         /*
         if(request()->isSecure()) {
             \URL::forceShema('https');
