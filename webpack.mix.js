@@ -12,8 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.ts('resources/js/index.ts', 'public/js')
-   .ts('resources/js/authView.tsx', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
+   .ts('resources/js/authView.ts', 'public/js')
    .sass('resources/sass/index.scss', 'public/css')
    .sass('resources/sass/book.scss', 'public/css')
    .sass('resources/sass/mail.scss', 'public/css')

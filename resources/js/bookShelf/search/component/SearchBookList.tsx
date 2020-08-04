@@ -23,27 +23,30 @@ const BookList = styled.div`
 
 const SearchBookList: React.FC = () => {
 
-	const searchBookList = useSelector((state: Store) => state.SearchBookList)
-	const userBookSearchMode = useSelector((state: Store) => state.UserBookSearchMode)
+  const searchBookList = useSelector((state: Store) => state.SearchBookList)
+  const userBookSearchMode = useSelector((state: Store) => state.UserBookSearchMode)
+  const userBookSearchModeCallback = React.useCallback(
+    () => userBookSearchMode
+  , [searchBookList])
 
-	const SearchBookListDom = searchBookList.map((searchBook, index) => {
+  const SearchBookListDom = searchBookList.map((searchBook, index) => {
 
-		return (
-			<Div key={index}>
-				<Book {...searchBook} />
-				{ userBookSearchMode ?
-					<DeleteBookButton bookId={searchBook.bookId} /> :
-					<AddBookButton book={searchBook} /> 
-				}
-			</Div>
-		)
-	})
+    return (
+      <Div key={index}>
+        <Book {...searchBook} />
+        { userBookSearchModeCallback() ?
+          <DeleteBookButton bookId={searchBook.bookId} /> :
+          <AddBookButton book={searchBook} /> 
+        }
+      </Div>
+    )
+  })
 
-	return (
-		<BookList>
-			{SearchBookListDom}
-		</BookList>
-	)
+  return (
+    <BookList>
+      {SearchBookListDom}
+    </BookList>
+  )
 }
 
 export default SearchBookList

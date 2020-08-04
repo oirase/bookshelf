@@ -62,8 +62,17 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'cors' => \App\Http\Middleware\Cors::class,
-        'checkDB' => \App\Http\Middleware\CheckDBConnection::class,
         //'extract' => \App\Http\Middleware\ExtractBookData::class,
+        'camel' => \App\Http\Middleware\ToCamel::class,
+        'snake' => \App\Http\Middleware\ToSnake::class,
+        'array' => \App\Http\Middleware\ToArray::class,
+        'string' => \App\Http\Middleware\ToString::class,
+    ];
+
+    protected $middlewarePriority = [
+        \App\Http\Middleware\ToCamel::class,
+        \App\Http\Middleware\ToSnake::class,
+        \App\Http\Middleware\ToArray::class,
+        \App\Http\Middleware\ToString::class,
     ];
 }

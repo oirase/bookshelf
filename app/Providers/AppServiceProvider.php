@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('makeBookData', \App\Repository\MakeBookData::class);
+        $this->app->bind('googleBooks', \App\Searvices\GoogleBooks::class);
     }
 
     /**
@@ -23,13 +22,12 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(UrlGenerator $url)
+    public function boot()
     {
         /*
         if(request()->isSecure()) {
             \URL::forceShema('https');
         }
         */
-        $url->forceScheme('https');
     }
 }

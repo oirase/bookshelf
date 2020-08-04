@@ -18,6 +18,6 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
         */
-        factory(App\User::class, 10)->create();
+        factory(App\Models\User::class, 10)->create();
     }
 }

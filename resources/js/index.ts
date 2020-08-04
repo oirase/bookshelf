@@ -1,2 +1,3 @@
+require('./axiosConfig')
 
-require('./bookShelf/index.tsx')
+require('./bookShelf')

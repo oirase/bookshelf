@@ -21,15 +21,14 @@ const useGetUserBookData = () => {
 		axios()
 			.then(res => {
       
-				dispatch(setUserBookList(res.data.items))
-				dispatch(setUserBookIdList(res.data.bookIdList))
-				selectPage === 1 && dispatch(setUserTotalItems(res.data.totalItems))
+				dispatch(setUserBookList(res.items))
+				dispatch(setUserBookIdList(res.bookIdList))
+				selectPage === 1 && dispatch(setUserTotalItems(res.totalItems))
 				errorMessage && dispatch(clearError())
 			})
 			.catch(error => {
       
 				dispatch(getBookDataError())
-				console.log(error)
 			})
 	}
 

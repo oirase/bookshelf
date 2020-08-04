@@ -19,21 +19,22 @@ Route::get('/test', 'TestController@index')->name('test');
 
 Route::get('/mail', 'TestController@previewMail');
 
-Route::get('/', 'IndexController@index')->middleware('checkDB')->name('index');
+Route::get('/', 'IndexController@index')->name('index');
 
 Route::post('/search', 'SearchBookController@getData')->name('search');
-Route::get('/search', 'SearchBookController@getData');
 
-Route::post('/user', 'UserBookController@getUserBookList')->name('user');
-Route::get('/user', 'UserBookController@getUserBookList');
-//Route::post('/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
-//Route::match(['options', 'post'],'/user', 'UserBookController@getUserBookList')->middleware('cors')->name('user');
+Route::middleware('camel', 'array')->group(function(){
 
-Route::post('/user/search', 'UserBookController@searchUserBookList')->name('user/search');
+    Route::post('/user', 'UserBookController@getUserBookList')->name('user');
 
-Route::get('/insert', 'MethodTestController@addBook');
-Route::post('/insert', 'UserBookController@addBook')->name('insert');
+    Route::post('/user/search', 'UserBookController@searchUserBookList')->name('user/search');
+});
 
+Route::post('/user/update', 'UserConfigController@changeUserData')->name('user/update');
+
+Route::post('/user/delete', 'UserConfigController@DeleteUserData')->name('user/delete');
+
+Route::post('/insert', 'UserBookController@addBook')->name('insert')->middleware('snake', 'string');
 
 Route::post('/delete', 'UserBookController@deleteBook')->name('delete');
 

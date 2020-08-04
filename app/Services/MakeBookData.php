@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Searvices;
 
 class MakeBookData {
 
@@ -29,26 +29,18 @@ class MakeBookData {
                 return $result;
             }
             
-            //throw new \Exception('Error Processing Request');
-            return $e;
+            throw new \Exception('Error Processing Request');
         }
 
         if($SelectPage > 1 && !array_key_exists('items', $bookData)){
             $result["items"] = [];
             return $result;
         }
-        //return 'search error';
-    try {
         $result["totalItems"] = $bookData["totalItems"];
 
         $bookList = $bookData["items"];
         $items = [];
         $count = count($bookList);
-    } catch(\Exception $e) {
-        return $e;
-    }
-    //return 'search result';
-    try {
         for($i=0; $i<$count; $i++) {
             $items[$i]["bookId"] = $bookList[$i]["id"];
             $bookList[$i] = $bookList[$i]["volumeInfo"];
@@ -84,14 +76,16 @@ class MakeBookData {
                         
                         break;
                     case "imageLinks":
-                        //$items[$i]["thumbnail"] = $value["thumbnail"];
-                        //$items[$i]["smallThumbnail"] = $value["smallThumbnail"];
+                        $items[$i]["thumbnail"] = $value["thumbnail"];
+                        $items[$i]["smallThumbnail"] = $value["smallThumbnail"];
+                        /*
                         try {
                             $items[$i]["thumbnail"] = str_replace('http', 'https', $value["thumbnail"]);
                             $items[$i]["smallThumbnail"] = str_replace('http', 'https', $value["smallThumbnail"]);
                         } catch(\Exception $e) {
-                            return [];
+                            return $e;
                         }
+                        */
                         break;
                     default:
                         $items[$i][$info] = $value;
@@ -99,9 +93,6 @@ class MakeBookData {
             }
         }
         $result["items"] = $items;
-    } catch (\Exception $e) {
-        return $e;
-    }
 
 
         return $result;

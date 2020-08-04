@@ -15,9 +15,8 @@
         <meta name="Twitter:site" content="{{ route('index') }}">
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
         @stack('js')
-        <link href="{{ asset('css/index.css', true) }}" rel="stylesheet">
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         @stack('css')
         <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
@@ -33,7 +32,7 @@
     <body>
     <x-header class="header"/>
     @if(Route::currentRouteName() == 'index')
-        <x-auth class="auth"/>
+            <x-auth class="auth" :user="$data ?? ''" :notice="$notice ?? ''" />
     @endif
     <div>
         @yield('content')

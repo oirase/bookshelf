@@ -1,6 +1,6 @@
-<div {{ $attributes }}>
+<div>
     <form action="{{ route('logout') }}" method="POST">
         @csrf
-        <button id="auth__button--logout"　type="submit">ログアウト</button>
+        <button  {{ $attributes }}　type="submit">ログアウト</button>
     </form>
 </div>

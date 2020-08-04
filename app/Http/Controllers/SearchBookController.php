@@ -3,28 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Searvices\GoogleBooks;
 
 class SearchBookController extends Controller
 {
+    private $google_books;
+
+    public function __construct(GoogleBooks $google_books) {
+        $this->google_books = $google_books;
+    }
 
 
     public function getData(Request $request)
-    {
-        //return null;
-        try {
-            $data = app('makeBookData')->googleBooks($request->searchWord, $request->selectPage, 20, $request->order);
-        } catch (\Exception $e) {
-            return $e;
-        }
-        return $data;
+    {   
+        $data = $this->google_books->googleBooks($request->searchWord, $request->selectPage, 20, $request->order);
         
+        return $data;   
     }
 
     public function getBook(Request $request, $bookId)
     {
-        $data = app('makeBookData')->googleBooksIdSearch($bookId);
+        $data = $this->google_books->googleBooksIdSearch($bookId);
         
-        if($data == null) {
+        if ($data == null) {
             return redirect()->route('index');
         }
         

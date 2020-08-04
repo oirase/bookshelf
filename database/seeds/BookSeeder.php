@@ -12,7 +12,7 @@ class BookSeeder extends Seeder
     public function run()
     {
 
-        $data = app('makeBookData')->googleBooks("東野圭吾", 10);
+        $data = app('googleBooks')->googleBooks("東野圭吾", 10);
         foreach($data["items"] as $key => $book) {
             if(isset($book['authors']) && is_array($book['authors'])) {
                 $data["items"][$key]['authors'] = implode(', ', $book['authors']);
@@ -21,7 +21,7 @@ class BookSeeder extends Seeder
         foreach($data["items"] as $book) {
             DB::table('books')->insert([
                 'book_id' => $book['bookId'],
-                'isbn' => $book['isbn'],
+                'isbn' => $book['isbn'] ?? '',
                 'title' => $book['title'] ?? '',
                 'authors' => $book['authors'] ?? '',
                 'publisher' => $book['publisher'] ?? '',

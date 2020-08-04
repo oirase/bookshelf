@@ -2,11 +2,13 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Book;
+use App\Models\Book;
+//use App\Searvices\GoogleBooks;
 use Faker\Generator as Faker;
 
 $factory->define(Book::class, function (Faker $faker) {
-    $data = app('makeBookData')->googleBooks("東野圭吾", 20);
+    //$google_books = new GoogleBooks();
+    $data = app('googleBooks')->googleBooks("東野圭吾", 20);
     $book = $data["items"][0];
     return [
         'book_id' => $book['bookId'],

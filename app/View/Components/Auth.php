@@ -6,14 +6,20 @@ use Illuminate\View\Component;
 
 class Auth extends Component
 {
+
+    public $user;
+
+    public $notice;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user, $notice)
     {
-        //
+        $this->user = $user;
+
+        $this->notice = $notice;
     }
 
     /**

@@ -38,8 +38,10 @@
     <input type="text" name="order" value="relevance">
     <button type="submit">searchword</button>
 </form>
-<form action="{{ route('search/isbn') }}" method="post">
+{{--
+<form action="{{ route('book/1') }}" method="post">
     @csrf
     <input type="text" name="isbn" value="9784798161402">
     <button type="submit">searchword</button>
 </form>
+--}}

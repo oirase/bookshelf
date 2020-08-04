@@ -53,12 +53,6 @@ const SearchBox: React.FC = () => {
 
 	React.useEffect(()=>{
 		if (searchInput.current) {
-			searchInput.current.focus()
-		}
-	}, [])
-
-	React.useEffect(()=>{
-		if (searchInput.current) {
 			searchInput.current.value = searchWord
 		}
 	}, [searchWord])
@@ -66,7 +60,7 @@ const SearchBox: React.FC = () => {
 
 	return (
 		<Div>
-			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress} />
+			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress}  autoFocus />
 			<Button onClick={getDataHandleClick}>検索</Button>
 		</Div>
 	)

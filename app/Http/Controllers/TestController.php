@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\StaticClass;
 use Illuminate\Support\Facades\Auth;
 use App\Scripts\MakeUrl;
-use App\User;
+use App\Models\User;
+use App\Models\Book;
 use App;
 
 class TestController extends Controller
@@ -16,7 +17,7 @@ class TestController extends Controller
     public $user;
 
     public function __construct() {
-        //$user = User::find(10);
+        //$user = User::find(1);
         //Auth::login($user);
         //dd($request-user());
         /*
@@ -33,7 +34,7 @@ class TestController extends Controller
     public function index(Request $request) {
         
         //dd($this->user);
-        $book = factory(App\Book::class)->make();
+        $book = factory(App\Models\Book::class)->make();
         //$makeUrl = new MakeUrl();
         //$book = $makeUrl->getUrl(['q' => 'isbn:[9784844328407]'])
         //$book = app('makeBookData')->googleBooks('isbn:[9784844321521]');
@@ -136,7 +137,7 @@ print("<br>2回目の結果: ".$ans."(プロパティの値".StaticClass::$stati
 
     public function addBookTest()
     {
-        $book = factory(App\Book::class)->make();
+        $book = factory(Book::class)->make();
         return view('test', ['book' => $book]);
 
     }

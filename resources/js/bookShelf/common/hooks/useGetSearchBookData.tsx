@@ -26,14 +26,13 @@ const useGetSearchBookData = () => {
 		axios()
 			.then(res => {
         
-				selectPage === 1 && dispatch(setSearchTotalItems(res.data.totalItems))
-				dispatch(setSearchBookList(res.data.items))
+				selectPage === 1 && dispatch(setSearchTotalItems(res.totalItems))
+				dispatch(setSearchBookList(res.items))
 				errorMessage && dispatch(clearError()) 
 			})
 			.catch(error => {
         
 				dispatch(getBookDataError())
-				console.log(error)
 			})
 	}
 

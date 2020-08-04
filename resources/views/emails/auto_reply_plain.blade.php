@@ -12,3 +12,5 @@ Bookshelfにお問い合わせ頂きありがとうございます
 {{ $data['subject'] }}
 本文
 {{ $data['body'] }}
+
+{{ route('index') }}

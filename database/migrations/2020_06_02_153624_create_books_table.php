@@ -25,7 +25,6 @@ class CreateBooksTable extends Migration
             $table->string('page_count');
             $table->string('thumbnail');
             $table->string('small_thumbnail');
-            //$table->primary('isbn');
             $table->timestamp('created_at')->useCurrent()->nullable();
         });
     }

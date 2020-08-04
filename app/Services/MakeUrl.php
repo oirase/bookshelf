@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Services;
 
 class MakeUrl {
 
@@ -10,9 +10,9 @@ class MakeUrl {
         return $url.'?'.$query;
     }
 
-    public function makeUrlGoogleBooks($searchWord, $selectPage, $max, $order)
+    public function makeUrlGoogleBooks($search_word, $select_page, $max, $order)
     {
-        $query = [ "q" => $searchWord, "startIndex" => $selectPage, "maxResults" => $max,"orderBy" => $order ];
+        $query = [ "q" => $search_word, "startIndex" => $select_page, "maxResults" => $max,"orderBy" => $order ];
         $api = config('api.url.default');
         return $this->getUrl($api, $query);
     }

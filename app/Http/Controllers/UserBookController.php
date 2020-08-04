@@ -3,184 +3,108 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
-use App\MemberInfo;
-use App\Book;
+//use Illuminate\Support\Facades\Schema;
+use App\Models\MemberInfo;
+use App\Repository\BookRepository;
+use App\Repository\MemberInfoRepository;
 
 class UserBookController extends Controller
 {
 
-    public $userId;
+    private $book_repository;
 
-    public $limit;
+    private $member_info_repository;
 
-    public function __construct(Request $request) 
-    {
+    private $user_id;
+
+    private $limit;
+
+    private $column;
+
+
+    public function __construct(
+        BookRepository $book_repository,
+        MemberInfoRepository $member_info_repository
+    ) {
+
         /*
-        try {
-        //if(\Auth::check()) {
+        if(Auth::check()) {
             $this->middleware(function ($request, $next){
-                $this->userId = \Auth::user()->user_id;
-                //echo "<br>{$this->userId}";
+                $this->user_id = \Auth::user()->user_id;
                 return $next($request);
             });
-        } catch (\Exception $e) {
-            return $e;
         }
-        //}
         */
-        
-        //$this->userId = MemberInfo::value('user_Id');
-        //$this->userId = '4ad49627-c212-456f-bd20-e474d4b20897';
+
+        //$this->user_id = '4ad49627-c212-456f-bd20-e474d4b20897';
+        //$this->middleware('camel');
+        //$this->$request = $request;
+        $this->book_repository = $book_repository;
+        $this->member_info_repository = $member_info_repository;
+        $this->user_id = MemberInfo::value('user_id');
         $this->limit = 20;
+        $this->column = ['book_id', 'isbn', 'title', 'authors', 'published_date', 'page_count', 'description', 'thumbnail', 'small_thumbnail'];
     }
 
     public function getUserBookList(Request $request)
     {
-        /*
-        $columns = [];
-        $columnus['sers'] = Schema::getColumnListing('users');
-        $columns['books'] = Schema::getColumnListing('books');
-        $columns['member_info'] = Schema::getColumnListing('member_info');
-        dd($columns);
-        */
-        //return 'getUserBookList';
-        $this->userId = \Auth::user()->user_id;
-        $SelectPage = $request->selectPage;
+        $select_page = $request->selectPage;
         $limit =  $this->limit;
-        $offset = ($SelectPage - 1) * $limit;
-        $column = ['books.book_id as bookId', 'isbn', 'title', 'authors', 'published_date as publishedDate', 'page_count as pageCount', 'description', 'thumbnail', 'small_thumbnail as smallThumbnail'];
-        if($request->order == 'created_at DESC' || $request->order == 'created_at ASC') {
-            $bookId = MemberInfo::where('user_id', $this->userId)->orderByRaw($request->order)->pluck('book_id');
-            $bookData = Book::select($column)->join('member_info', 'books.book_id', '=', 'member_info.book_id')
-                                        ->where('member_info.user_id', $this->userId)
-                                        ->orderByRaw("member_info.{$request->order}")
-                                         ->offset($offset)
-                                         ->limit($limit)
-
-                                         ->get();
-
+        $offset = ($select_page - 1) * $limit;
+        $this->column[0] = 'books.book_id';
+        $book_id = $this->member_info_repository->getUserbookIdList($this->user_id, $request->order);
+        if ($request->order == 'created_at DESC' || $request->order == 'created_at ASC') {
+            $book_data = $this->book_repository->getOrderReferenceMemberInfo($this->column, $book_id, $this->user_id, $offset, $limit, $request->order);
         } else {
-            $bookId = MemberInfo::where('user_id', $this->userId)->pluck('book_id');
-            $bookData = Book::select($column)->whereIn('book_id', $bookId)
-                                         ->offset($offset)
-                                         ->limit($limit)
-                                         ->orderByRaw($request->order)
-                                         ->get();
+            $book_data = $this->book_repository->getUserBook($this->column, $book_id, $offset, $limit, $request->order);
         }
 
-
-        foreach($bookData as $key => $book) {
-            $bookData[$key]['authors'] = explode(',', $book['authors']);
-        }
-
-
-        $result["bookIdList"] =  $bookId;
-        $result["items"] = $bookData;
-        $result["totalItems"] = count($bookId);
+        $result["book_id_list"] =  $book_id;
+        $result["items"] = $book_data;
+        $result["total_items "] = count($book_id);
         
         return $result;
-               
-
     }
 
     public function searchUserBookList(Request $request)
     {
-        //return 'searchUserBookList';
-
-        $this->userId = \Auth::user()->user_id;
-        $searchWord = $request->searchWord;
-        $SelectPage = $request->selectPage;
+        $search_word = $request->searchWord;
+        $select_page = $request->selectPage;
         $limit =  $this->limit;
+        //$order = $request->order;
+        $order = 'created_at DESC';
+        $offset = ($select_page - 1) * $limit;
+        $book_id = $this->member_info_repository->getUserbookIdList($this->user_id, $order);
+        $book_data = $this->book_repository->searchUserBook($this->column, $book_id, $search_word, $offset, $limit);
+        $total_items  = $this->book_repository->countSearchUserBook($this->column, $book_id, $search_word);
 
-        $offset = ($SelectPage - 1) * $limit;
-        $bookId = MemberInfo::where('user_id', $this->userId)->pluck('book_id');
+        $result['book_id_list'] =  $book_id;
+        $result['items'] = $book_data;
+        $result["total_items "] = $total_items ;
 
-        $column = ['book_id', 'isbn', 'title', 'authors', 'published_date as publishedDate', 'page_count as pageCount', 'description', 'thumbnail', 'small_thumbnail as smallThumbnail'];
-        $bookData = Book::select($column)->whereIn('book_id', $bookId)
-                                         ->Where(function($query) use ($searchWord) {
-                                            $query->where('title', 'like', "%{$searchWord}%")
-                                                  ->orWhere('authors', 'like', "%{$searchWord}%")
-                                                  ->orWhere('published_date', 'like', "%{$searchWord}%")
-                                                  ->orWhere('description', 'like', "%{$searchWord}%");
-                                         })
-                                         ->offset($offset)
-                                         ->limit($limit)
-                                         ->get();
-
-        $totalItems = Book::whereIn('book_id', $bookId)
-                                         ->Where(function($query) use ($searchWord) {
-                                            $query->where('title', 'like', "%{$searchWord}%")
-                                                  ->orWhere('authors', 'like', "%{$searchWord}%")
-                                                  ->orWhere('published_date', 'like', "%{$searchWord}%")
-                                                  ->orWhere('description', 'like', "%{$searchWord}%");
-                                         })
-                                         ->count();
-
-        foreach($bookData as $key => $book) {
-            $bookData[$key]['authors'] = explode(',', $book['authors']);
-        }
-        $result['bookIdList'] =  $bookId;
-        $result['items'] = $bookData;
-        $result["totalItems"] = $totalItems;
-
-        
         return $result;
-        
     }
 
-    public function addBook(request $request)
+    public function addBook(Request $request)
     {
-        //return 'addBook';
-        try {
-        $this->userId = \Auth::user()->user_id;
-        $addBook = json_decode($request->addBook, true);
-        $column = Schema::getColumnListing('books');
-        $column = array_diff($column, ['id', 'created_at']);
-        
-        if (is_array($addBook['authors'])) {
-            $addBook['authors'] = implode(', ', $addBook['authors']);
-        }
+        $book  = $request->addBook;
 
-        $book = [];
-        foreach($addBook as $key => $value) {
-            $book[Str::snake($key)] = $value;
-        }
-
-        foreach($column as $value) {
-            if(!array_key_exists($value, $book)) {
+        foreach ($this->column as $value) {
+            if (!array_key_exists($value, $book)) {
                 $book[$value] = '';
             }
         }
 
-        if (Book::where('book_id', $book["book_id"])->doesntExist()) {
-            Book::insert($book);
-        }
-
-            MemberInfo::insert(["user_id" => $this->userId, "book_id" => $book["book_id"]]);
-        } catch (\Exception $e) {
-            return $e;
-        }
+        $this->book_repository->insert($book);
+        $this->member_info_repository->insert($this->user_id, $book["book_id"]);
         return 'success';
-        
     }
 
-    public function deleteBook(request $request)
+    public function deleteBook(Request $request)
     {
-        //return 'deleteBook';
-        $this->userId = \Auth::user()->user_id;
-        $bookId = $request->bookId;
-        MemberInfo::where([
-            ['user_id', $this->userId],
-            ['book_id', $bookId]
-        ])->delete();
-
-        if (MemberInfo::where('book_id', $bookId)->doesntExist()) {
-            Book::where('book_id', $bookId)->delete();
-        }
-        
+        $book_id = $request->bookId;
+        $this->member_info_repository->delete($this->user_id, $book_id);
+        $this->book_repository->delete($book_id);
 
         return 'success';
     }
