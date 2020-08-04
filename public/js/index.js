@@ -41527,11 +41527,11 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 "use strict";
 
-//export const root = 'http://networkdesign.s1005.xrea.com/bookshelf'
+//export const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lodingImage = exports.root = void 0;
-exports.root = 'https://bookshelf-booksearch.herokuapp.com';
-exports.lodingImage = exports.root + "/image/89-32.gif";
+exports.root = 'https://bookshelf-booksearch.herokuapp.com/';
+exports.lodingImage = exports.root + "image/89-32.gif";
 
 
 /***/ }),
