@@ -41317,7 +41317,7 @@ var Book = function (props) {
         searchMode || dispatch(SearchMode_1.changeSearchMode(true));
         dispatch(SearchWord_1.setSearchWord(authors));
         dispatch(SearchSelectPage_1.setSearchSelectPage(1));
-        window.scroll(0, 100);
+        window.scroll(0, 150);
     };
     return (React.createElement(Ul, null,
         React.createElement(ImgWrapper, { onClick: function () { history.push({ pathname: "/bookshelf/book/" + props.bookId, state: props }); } }, props.thumbnail && React.createElement("img", { src: props.thumbnail })),
@@ -41687,6 +41687,7 @@ var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/a
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var LodingState_1 = __webpack_require__(/*! ~/common/store/LodingState */ "./resources/js/bookShelf/common/store/LodingState.tsx");
 var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
+axios_1.default.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var makeFormData = function (data) {
     var formData = new FormData();
     for (var _i = 0, _a = Object.keys(data); _i < _a.length; _i++) {
@@ -43019,7 +43020,7 @@ var SearchContents = function () {
         React.createElement(SearchMessage_1.default, null),
         React.createElement(SearchPaginate_1.default, null),
         React.createElement(SearchBookList_1.default, null),
-        React.createElement(SearchPaginate_1.default, { option: function () { window.scroll(0, 100); } })));
+        React.createElement(SearchPaginate_1.default, { option: function () { window.scroll(0, 150); } })));
 };
 exports.default = SearchContents;
 var templateObject_1;
@@ -43557,7 +43558,7 @@ var UserContents = function () {
         React.createElement(UserMessage_1.default, null),
         React.createElement(UserPaginate_1.default, null),
         React.createElement(UserBookList_1.default, null),
-        React.createElement(UserPaginate_1.default, { option: function () { window.scroll(0, 100); } })));
+        React.createElement(UserPaginate_1.default, { option: function () { window.scroll(0, 150); } })));
 };
 exports.default = UserContents;
 var templateObject_1;
