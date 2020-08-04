@@ -26,7 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(UrlGenerator $url)
     {
         //if (in_array(config('app.env'),['prd', 'stg'], true)){
-            $url->formatScheme('https');
+            //$url->formatScheme('https');
+            $url->forceScheme('https');
         //}
         /*
         if(request()->isSecure()) {
