@@ -27,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //if (in_array(config('app.env'),['prd', 'stg'], true)){
             //$url->formatScheme('https');
+        if(request()->isSecure()) {
             $url->forceScheme('https');
+        }
         //}
         /*
         if(request()->isSecure()) {
