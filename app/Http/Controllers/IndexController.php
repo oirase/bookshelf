@@ -14,14 +14,14 @@ class IndexController extends Controller
         //return $user->morning();
         /*
         $user = User::find(1);
-        \Auth::login($user);
+        Auth::login($user);
         */
-        if (!\Auth::check()) {
+        if (!Auth::check()) {
             return view('index');
         }
             $data = new \stdClass();
-            $data->email = \Auth::user()->email;
-            $data->name = \Auth::user()->name;
+            $data->email = Auth::user()->email;
+            $data->name = Auth::user()->name;
              
         if ($request->session()->exists('notice')) {
             $notice = $request->session()->get('notice');
