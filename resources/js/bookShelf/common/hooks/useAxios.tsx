@@ -8,7 +8,9 @@ interface Query {
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
-const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
+//const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
+
+const root = 'https://bookshelf-booksearch.herokuapp.com/'
 
 const makeFormData = (data: Query): {} => {
 	const formData = new FormData()
