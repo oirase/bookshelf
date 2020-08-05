@@ -41288,6 +41288,7 @@ var SearchWord_1 = __webpack_require__(/*! ~/menu/store/SearchWord */ "./resourc
 var SearchSelectPage_1 = __webpack_require__(/*! ~/search/store/SearchSelectPage */ "./resources/js/bookShelf/search/store/SearchSelectPage.tsx");
 var SearchMode_1 = __webpack_require__(/*! ~/menu/store/SearchMode */ "./resources/js/bookShelf/menu/store/SearchMode.tsx");
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var Ul = styled_components_1.default.ul(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: 210px;\n  text-align: center;\n  margin-bottom: 0.4rem\n"], ["\n  width: 210px;\n  text-align: center;\n  margin-bottom: 0.4rem\n"])));
 var Li = styled_components_1.default.li(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 0.6rem;\n  line-height: 1.6;\n"], ["\n  margin-bottom: 0.6rem;\n  line-height: 1.6;\n"])));
@@ -41320,7 +41321,7 @@ var Book = function (props) {
         window.scroll(0, 150);
     };
     return (React.createElement(Ul, null,
-        React.createElement(ImgWrapper, { onClick: function () { history.push({ pathname: "/bookshelf/book/" + props.bookId, state: props }); } }, props.thumbnail && React.createElement("img", { src: props.thumbnail })),
+        React.createElement(ImgWrapper, { onClick: function () { history.push({ pathname: config_1.bookPageRoute + "/" + props.bookId, state: props }); } }, props.thumbnail && React.createElement("img", { src: props.thumbnail })),
         props.title && React.createElement(Li, null, props.title),
         authorsDom && React.createElement(Li, null, authorsDom),
         props.publishedDate && React.createElement(Li, null, props.publishedDate)));
@@ -41529,8 +41530,10 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 //export const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.lodingImage = exports.root = void 0;
+exports.lodingImage = exports.bookPageRoute = exports.topPageRoute = exports.root = void 0;
 exports.root = 'https://bookshelf-booksearch.herokuapp.com/';
+exports.topPageRoute = '/';
+exports.bookPageRoute = '/book';
 exports.lodingImage = exports.root + "image/89-32.gif";
 
 
@@ -42203,6 +42206,7 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/r
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 var BookListPage_1 = __importDefault(__webpack_require__(/*! ./BookListPage */ "./resources/js/bookShelf/main/component/BookListPage.tsx"));
 var BookPage_1 = __importDefault(__webpack_require__(/*! ./BookPage */ "./resources/js/bookShelf/main/component/BookPage.tsx"));
+var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
 var App = function () {
     return (react_1.default.createElement(react_router_dom_1.BrowserRouter, null,
         react_1.default.createElement("div", null,
@@ -42211,12 +42215,12 @@ var App = function () {
                 //exact path="/bookshelf"
                 , { 
                     //exact path="/bookshelf"
-                    exact: true, path: "/", component: BookListPage_1.default }),
+                    exact: true, path: config_1.topPageRoute, component: BookListPage_1.default }),
                 react_1.default.createElement(react_router_dom_1.Route
                 //path="/bookshelf/book"
                 , { 
                     //path="/bookshelf/book"
-                    path: "/book/:id", component: BookPage_1.default })))));
+                    path: config_1.bookPageRoute, component: BookPage_1.default })))));
 };
 exports.default = App;
 
