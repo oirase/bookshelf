@@ -42216,7 +42216,7 @@ var App = function () {
                 //path="/bookshelf/book"
                 , { 
                     //path="/bookshelf/book"
-                    path: "/book", component: BookPage_1.default })))));
+                    path: "/book/:id", component: BookPage_1.default })))));
 };
 exports.default = App;
 
