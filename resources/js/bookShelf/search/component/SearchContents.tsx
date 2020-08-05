@@ -21,7 +21,7 @@ const SearchContents: React.FC = () => {
 			<SearchMessage />
 			<SearchPaginate />
 			<SearchBookList />
-			<SearchPaginate option={()=>{window.scroll(0, 200)}} />
+			<SearchPaginate option={()=>{window.scroll(0, 150)}} />
 		</Contents>
 	)
 }

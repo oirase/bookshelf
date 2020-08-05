@@ -62,7 +62,7 @@ const Book: React.FC<BookType> = (props) => {
 		searchMode || dispatch(changeSearchMode(true))
 		dispatch(setSearchWord(authors))
 		dispatch(setSearchSelectPage(1))
-		window.scroll(0, 200)
+		window.scroll(0, 150)
 	}
   
 

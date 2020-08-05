@@ -21,7 +21,7 @@ const UserContents: React.FC = () => {
 			<UserMessage />
 			<UserPaginate />
 			<UserBookList />
-			<UserPaginate option={()=>{window.scroll(0, 200)}} />
+			<UserPaginate option={()=>{window.scroll(0, 150)}} />
 		</Contents>
 	)
 }

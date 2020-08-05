@@ -16,7 +16,7 @@ const App: React.FC = () => {
 				<Switch>
 					<Route
 						//exact path="/bookshelf"
-						exact path=""
+						exact path="/"
 						component={BookListPage}
 					/>
 					<Route

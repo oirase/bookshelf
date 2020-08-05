@@ -1,16 +1,13 @@
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { LodingStart, LodingEnd } from '~/common/store/LodingState'
+import { root } from '~/common/config'
 
 interface Query {
   [key: string]: string
 }
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-
-//const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
-
-const root = 'https://bookshelf-booksearch.herokuapp.com/'
 
 const makeFormData = (data: Query): {} => {
 	const formData = new FormData()

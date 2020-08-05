@@ -21,7 +21,7 @@ const Div = styled.div`
 const Scroll: React.FC = () => {
 
 	const scrollUp = () => {
-		window.scroll(0, 200)
+		window.scroll(0, 150)
 	}
 
 	return (
