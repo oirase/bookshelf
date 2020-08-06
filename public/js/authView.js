@@ -195,11 +195,8 @@ var disabledElment = function (ele) {
     }
 };
 exports.disabledAdjacencyElement = function (ele) {
-    console.log(ele);
     var previous = ele.previousElementSibling || null;
-    console.log(previous);
     var next = ele.nextElementSibling || null;
-    console.log(next);
     previous && disabledElment(previous);
     next && disabledElment(next);
 };

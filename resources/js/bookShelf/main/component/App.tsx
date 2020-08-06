@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import BookListPage from './BookListPage'
 import BookPage from './BookPage'
-  
+import { topPageRoute, bookPageRoute } from '~/common/config'
 
 const App: React.FC = () => {
 
@@ -16,12 +16,12 @@ const App: React.FC = () => {
 				<Switch>
 					<Route
 						//exact path="/bookshelf"
-						exact path="/"
+						exact path={topPageRoute}
 						component={BookListPage}
 					/>
 					<Route
 						//path="/bookshelf/book"
-						path="/book"
+						path={bookPageRoute}
 						component={BookPage}
 					/>
 				</Switch>

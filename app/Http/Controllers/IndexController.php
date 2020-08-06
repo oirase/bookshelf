@@ -12,10 +12,10 @@ class IndexController extends Controller
     {   
         //$user = new User;
         //return $user->morning();
-        /*
-        $user = User::find(1);
-        Auth::login($user);
-        */
+        
+        //$user = User::find(1);
+        //Auth::login($user);
+        // dd($request->user()->user_id);
         if (!Auth::check()) {
             return view('index');
         }

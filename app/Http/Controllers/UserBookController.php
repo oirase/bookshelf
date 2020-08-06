@@ -41,13 +41,15 @@ class UserBookController extends Controller
         //$this->$request = $request;
         $this->book_repository = $book_repository;
         $this->member_info_repository = $member_info_repository;
-        $this->user_id = MemberInfo::value('user_id');
+        //$this->user_id = MemberInfo::value('user_id');
+
         $this->limit = 20;
         $this->column = ['book_id', 'isbn', 'title', 'authors', 'published_date', 'page_count', 'description', 'thumbnail', 'small_thumbnail'];
     }
 
     public function getUserBookList(Request $request)
     {
+        $this->user_id = $request->user()->user_id;
         $select_page = $request->selectPage;
         $limit =  $this->limit;
         $offset = ($select_page - 1) * $limit;
@@ -68,6 +70,7 @@ class UserBookController extends Controller
 
     public function searchUserBookList(Request $request)
     {
+        $this->user_id = $request->user()->user_id;
         $search_word = $request->searchWord;
         $select_page = $request->selectPage;
         $limit =  $this->limit;
@@ -87,6 +90,7 @@ class UserBookController extends Controller
 
     public function addBook(Request $request)
     {
+        $this->user_id = $request->user()->user_id;
         $book  = $request->addBook;
 
         foreach ($this->column as $value) {
@@ -102,6 +106,8 @@ class UserBookController extends Controller
 
     public function deleteBook(Request $request)
     {
+        $this->user_id = $request->user()->user_id;
+        //dd($request->user());
         $book_id = $request->bookId;
         $this->member_info_repository->delete($this->user_id, $book_id);
         $this->book_repository->delete($book_id);

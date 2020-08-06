@@ -39,11 +39,8 @@ const disabledElment = (ele: Element) => {
 
 export const disabledAdjacencyElement = (ele: HTMLElement) => {
   
-  console.log(ele)
   const previous = ele.previousElementSibling || null
-  console.log(previous)
   const next = ele.nextElementSibling || null
-  console.log(next)
   previous && disabledElment(previous)
   next && disabledElment(next)
 

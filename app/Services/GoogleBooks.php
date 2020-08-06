@@ -90,7 +90,7 @@ class GoogleBooks {
 
                 case "industryIdentifiers":
                     if(count($book[$firld]) > 1) {
-                        $result["isbn"] = isbnCheck($book[$firld]);
+                        $result["isbn"] = $this->isbnCheck($book[$firld]);
                     }
                     break;
 

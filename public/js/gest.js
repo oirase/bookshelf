@@ -41553,103 +41553,6 @@ console.log('config root', root);
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/common/hooks/useAddBook.tsx":
-/*!************************************************************!*\
-  !*** ./resources/js/bookShelf/common/hooks/useAddBook.tsx ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var useAxios = __importStar(__webpack_require__(/*! ~/common/hooks/useAxios */ "./resources/js/bookShelf/common/hooks/useAxios.tsx"));
-var UserUpdate_1 = __webpack_require__(/*! ~/user/store/UserUpdate */ "./resources/js/bookShelf/user/store/UserUpdate.tsx");
-var UserBookIdList_1 = __webpack_require__(/*! ~/user/store/UserBookIdList */ "./resources/js/bookShelf/user/store/UserBookIdList.tsx");
-var ErrorMessage_1 = __webpack_require__(/*! ~/common/store/ErrorMessage */ "./resources/js/bookShelf/common/store/ErrorMessage.tsx");
-var useAddBook = function (book) {
-    var bookIdList = react_redux_1.useSelector(function (state) { return state.UserBookIdList; });
-    var dispatch = react_redux_1.useDispatch();
-    var data = JSON.stringify(book);
-    var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
-    var axios = useAxios.post('insert', { 'addBook': data });
-    var addBook = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            axios()
-                .then(function (res) {
-                dispatch(UserBookIdList_1.addUserBookIdList(book.bookId));
-                dispatch(UserUpdate_1.updateUserBookList());
-                errorMessage && dispatch(ErrorMessage_1.clearError());
-            })
-                .catch(function (error) {
-                dispatch(ErrorMessage_1.changeBookError());
-            });
-            return [2 /*return*/];
-        });
-    }); };
-    return addBook;
-};
-exports.default = useAddBook;
-
-
-/***/ }),
-
 /***/ "./resources/js/bookShelf/common/hooks/useAxios.tsx":
 /*!**********************************************************!*\
   !*** ./resources/js/bookShelf/common/hooks/useAxios.tsx ***!
@@ -41704,7 +41607,7 @@ var axios_1 = __importDefault(__webpack_require__(/*! axios */ "./node_modules/a
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var LodingState_1 = __webpack_require__(/*! ~/common/store/LodingState */ "./resources/js/bookShelf/common/store/LodingState.tsx");
 var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
-axios_1.default.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 var makeFormData = function (data) {
     var formData = new FormData();
     for (var _i = 0, _a = Object.keys(data); _i < _a.length; _i++) {
@@ -41733,7 +41636,7 @@ exports.get = function (url) {
     return customAxiosGet;
 };
 exports.post = function (url, data) {
-    url = config_1.root + url;
+    var sendURL = config_1.root + url;
     var dispatch = react_redux_1.useDispatch();
     var customAxiosPost = function () { return __awaiter(void 0, void 0, void 0, function () {
         var formData, res;
@@ -41742,7 +41645,7 @@ exports.post = function (url, data) {
                 case 0:
                     formData = makeFormData(data);
                     dispatch(LodingState_1.LodingStart());
-                    return [4 /*yield*/, axios_1.default.post(url, formData)];
+                    return [4 /*yield*/, axios_1.default.post(sendURL, formData)];
                 case 1:
                     res = _a.sent();
                     console.log(res);
@@ -41753,68 +41656,6 @@ exports.post = function (url, data) {
     }); };
     return customAxiosPost;
 };
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/common/hooks/useDeleteBook.tsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/bookShelf/common/hooks/useDeleteBook.tsx ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var useAxios = __importStar(__webpack_require__(/*! ~/common/hooks/useAxios */ "./resources/js/bookShelf/common/hooks/useAxios.tsx"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var UserUpdate_1 = __webpack_require__(/*! ~/user/store/UserUpdate */ "./resources/js/bookShelf/user/store/UserUpdate.tsx");
-var SearchUpdate_1 = __webpack_require__(/*! ~/search/store/SearchUpdate */ "./resources/js/bookShelf/search/store/SearchUpdate.tsx");
-var ErrorMessage_1 = __webpack_require__(/*! ~/common/store/ErrorMessage */ "./resources/js/bookShelf/common/store/ErrorMessage.tsx");
-var useDeleteBook = function (bookId) {
-    var dispatch = react_redux_1.useDispatch();
-    var searchMode = react_redux_1.useSelector(function (state) { return state.SearchMode; });
-    var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
-    var axios = useAxios.post('delete', { bookId: bookId });
-    var deleteBook = function () {
-        axios()
-            .then(function () {
-            if (searchMode) {
-                dispatch(SearchUpdate_1.updateSearchBookList());
-                dispatch(UserUpdate_1.updateUserBookList());
-            }
-            else {
-                dispatch(UserUpdate_1.updateUserBookList());
-            }
-            errorMessage && dispatch(ErrorMessage_1.clearError());
-        })
-            .catch(function () {
-            dispatch(ErrorMessage_1.changeBookError());
-        });
-    };
-    return deleteBook;
-};
-exports.default = useDeleteBook;
 
 
 /***/ }),
@@ -41858,10 +41699,9 @@ var useGetSearchBookData = function () {
     var selectPage = react_redux_1.useSelector(function (state) { return state.SearchSelectPage; });
     var searchWord = react_redux_1.useSelector(function (state) { return state.SearchWord; });
     var order = react_redux_1.useSelector(function (state) { return state.SearchOrder; });
-    var userBookSearchMode = react_redux_1.useSelector(function (state) { return state.UserBookSearchMode; });
     var searchUpdate = react_redux_1.useSelector(function (state) { return state.SearchUpdate; });
     var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
-    var url = userBookSearchMode ? 'user/search' : 'search';
+    var url = 'search';
     var axios = useAxios.post(url, { searchWord: searchWord, selectPage: selectPage, order: order });
     var dispatch = react_redux_1.useDispatch();
     var getSearchData = function () {
@@ -41880,68 +41720,6 @@ var useGetSearchBookData = function () {
     React.useEffect(getSearchData, [searchWord, selectPage, order, searchUpdate]);
 };
 exports.default = useGetSearchBookData;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/common/hooks/useGetUserBookData.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/common/hooks/useGetUserBookData.tsx ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var useAxios = __importStar(__webpack_require__(/*! ~/common/hooks/useAxios */ "./resources/js/bookShelf/common/hooks/useAxios.tsx"));
-var UserBookList_1 = __webpack_require__(/*! ~/user/store/UserBookList */ "./resources/js/bookShelf/user/store/UserBookList.tsx");
-var UserBookIdList_1 = __webpack_require__(/*! ~/user/store/UserBookIdList */ "./resources/js/bookShelf/user/store/UserBookIdList.tsx");
-var UserTotalItems_1 = __webpack_require__(/*! ~/user/store/UserTotalItems */ "./resources/js/bookShelf/user/store/UserTotalItems.tsx");
-var ErrorMessage_1 = __webpack_require__(/*! ~/common/store/ErrorMessage */ "./resources/js/bookShelf/common/store/ErrorMessage.tsx");
-var useGetUserBookData = function () {
-    var order = react_redux_1.useSelector(function (state) { return state.UserOrder; });
-    var selectPage = react_redux_1.useSelector(function (state) { return state.UserSelectPage; });
-    var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
-    var userUpdate = react_redux_1.useSelector(function (state) { return state.UserUpdate; });
-    var dispatch = react_redux_1.useDispatch();
-    var axios = useAxios.post('user', { selectPage: selectPage, order: order });
-    var setUserData = function () {
-        axios()
-            .then(function (res) {
-            dispatch(UserBookList_1.setUserBookList(res.items));
-            dispatch(UserBookIdList_1.setUserBookIdList(res.bookIdList));
-            selectPage === 1 && dispatch(UserTotalItems_1.setUserTotalItems(res.totalItems));
-            errorMessage && dispatch(ErrorMessage_1.clearError());
-        })
-            .catch(function (error) {
-            dispatch(ErrorMessage_1.getBookDataError());
-        });
-    };
-    React.useEffect(setUserData, [selectPage, order, userUpdate]);
-};
-exports.default = useGetUserBookData;
 
 
 /***/ }),
@@ -42331,11 +42109,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
-var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/component/AddBookButton */ "./resources/js/bookShelf/search/component/AddBookButton.tsx"));
 var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3rem 0 2.5rem 0;\n  min-height: calc(100vh - 10rem);\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3rem 0 2.5rem 0;\n  min-height: calc(100vh - 10rem);\n"])), style_1.color.search);
 var Book = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  padding: 0 5%;\n  //margin-bottom: 0.9rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n"], ["\n  padding: 0 5%;\n  //margin-bottom: 0.9rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n"])));
 var Data = styled_components_1.default.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: center;\n  max-width: 100%;\n  margin-bottom: 1rem;\n"], ["\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: center;\n  max-width: 100%;\n  margin-bottom: 1rem;\n"])));
@@ -42347,8 +42122,6 @@ var A = styled_components_1.default.a(templateObject_8 || (templateObject_8 = __
 var BookPage = function () {
     var location = react_router_dom_1.useLocation();
     var book = location.state;
-    var userBookSearchMode = react_redux_1.useSelector(function (state) { return state.UserBookSearchMode; });
-    var searchMode = react_redux_1.useSelector(function (state) { return state.SearchMode; });
     var authors;
     if (book.authors) {
         authors = book.authors;
@@ -42368,10 +42141,7 @@ var BookPage = function () {
                     book.isbn && React.createElement(Li, null, book.isbn))),
             book.description &&
                 React.createElement(Description, null, book.description)),
-        React.createElement(A, { onClick: function () { history.back(); } }, "\u691C\u7D22\u30DA\u30FC\u30B8\u3078\u623B\u308B"),
-        !searchMode || userBookSearchMode ?
-            React.createElement(DeleteBookButton_1.default, { bookId: book.bookId }) :
-            React.createElement(AddBookButton_1.default, { book: book })));
+        React.createElement(A, { onClick: function () { history.back(); } }, "\u691C\u7D22\u30DA\u30FC\u30B8\u3078\u623B\u308B")));
 };
 exports.default = BookPage;
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
@@ -42444,10 +42214,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var useGetSearchBookData_1 = __importDefault(__webpack_require__(/*! ~/common/hooks/useGetSearchBookData */ "./resources/js/bookShelf/common/hooks/useGetSearchBookData.tsx"));
-var useGetUserBookData_1 = __importDefault(__webpack_require__(/*! ~/common/hooks/useGetUserBookData */ "./resources/js/bookShelf/common/hooks/useGetUserBookData.tsx"));
 var Update = function () {
     useGetSearchBookData_1.default();
-    useGetUserBookData_1.default();
     return null;
 };
 exports.default = Update;
@@ -42468,26 +42236,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var redux_1 = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 var store_1 = __webpack_require__(/*! ~/common/store */ "./resources/js/bookShelf/common/store/index.tsx");
-var store_2 = __webpack_require__(/*! ~/user/store */ "./resources/js/bookShelf/user/store/index.tsx");
-var store_3 = __webpack_require__(/*! ~/search/store */ "./resources/js/bookShelf/search/store/index.tsx");
-var store_4 = __webpack_require__(/*! ~/menu/store */ "./resources/js/bookShelf/menu/store/index.tsx");
+var store_2 = __webpack_require__(/*! ~/search/store */ "./resources/js/bookShelf/search/store/index.tsx");
+var store_3 = __webpack_require__(/*! ~/menu/store */ "./resources/js/bookShelf/menu/store/index.tsx");
 var reducer = redux_1.combineReducers({
     ErrorMessage: store_1.ErrorMessage,
     LodingState: store_1.LodingState,
-    UserBookList: store_2.UserBookList,
-    UserOrder: store_2.UserOrder,
-    UserBookIdList: store_2.UserBookIdList,
-    UserSelectPage: store_2.UserSelectPage,
-    UserTotalItems: store_2.UserTotalItems,
-    UserUpdate: store_2.UserUpdate,
-    SearchBookList: store_3.SearchBookList,
-    SearchOrder: store_3.SearchOrder,
-    SearchSelectPage: store_3.SearchSelectPage,
-    SearchTotalItems: store_3.SearchTotalItems,
-    SearchUpdate: store_3.SearchUpdate,
-    SearchWord: store_4.SearchWord,
-    SearchMode: store_4.SearchMode,
-    UserBookSearchMode: store_4.UserBookSearchMode,
+    SearchBookList: store_2.SearchBookList,
+    SearchOrder: store_2.SearchOrder,
+    SearchSelectPage: store_2.SearchSelectPage,
+    SearchTotalItems: store_2.SearchTotalItems,
+    SearchUpdate: store_2.SearchUpdate,
+    SearchWord: store_3.SearchWord,
+    SearchMode: store_3.SearchMode,
 });
 var store = toolkit_1.configureStore({ reducer: reducer });
 exports.default = store;
@@ -42587,21 +42347,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var SearchBox_1 = __importDefault(__webpack_require__(/*! ~/menu/component/SearchBox */ "./resources/js/bookShelf/menu/component/SearchBox.tsx"));
 var ChangeModeButton_1 = __importDefault(__webpack_require__(/*! ~/menu/component/ChangeModeButton */ "./resources/js/bookShelf/menu/component/ChangeModeButton.tsx"));
-var UserBookSearchCheck_1 = __importDefault(__webpack_require__(/*! ~/menu/component/UserBookSearchCheck */ "./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx"));
-var UserOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserOrderSelect */ "./resources/js/bookShelf/user/component/UserOrderSelect.tsx"));
 var SearchOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchOrderSelect */ "./resources/js/bookShelf/search/component/SearchOrderSelect.tsx"));
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 //import { CangeModeContext } from '~/main/component/BookListPage'
 var Nav = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #990000;\n  color: #FFF;\n  padding-top: 1.7rem;\n  height: 17.7rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  background: #990000;\n  color: #FFF;\n  padding-top: 1.7rem;\n  height: 17.7rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n"])));
 var Menu = function () {
-    var searchMode = react_redux_1.useSelector(function (state) { return state.SearchMode; });
     return (React.createElement(Nav, null,
-        searchMode ? React.createElement(SearchOrderSelect_1.default, null) : React.createElement(UserOrderSelect_1.default, null),
+        React.createElement(SearchOrderSelect_1.default, null),
         React.createElement(SearchBox_1.default, null),
-        React.createElement(UserBookSearchCheck_1.default, null),
         React.createElement(ChangeModeButton_1.default, null)));
 };
 exports.default = Menu;
@@ -42688,63 +42443,6 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx":
-/*!***********************************************************************!*\
-  !*** ./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var UserBookSearchMode_1 = __webpack_require__(/*! ~/menu/store/UserBookSearchMode */ "./resources/js/bookShelf/menu/store/UserBookSearchMode.tsx");
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  position: relative;\n  width: 16rem;\n  height: 1.8rem;\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  position: relative;\n  width: 16rem;\n  height: 1.8rem;\n"])));
-var InputCheckBox = styled_components_1.default.input(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: none;\n\n  &:checked+label::before {\n    content: \"\\02713\";  \n  }\n"], ["\n  display: none;\n\n  &:checked+label::before {\n    content: \"\\\\02713\";  \n  }\n"])));
-var Label = styled_components_1.default.label(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  &::before {\n    content: \"\";\n    width: 1.8rem;\n    height: 1.8rem;\n    font-size: 2rem;\n    color: #333;\n    background: #FFF;\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n"], ["\n  &::before {\n    content: \"\";\n    width: 1.8rem;\n    height: 1.8rem;\n    font-size: 2rem;\n    color: #333;\n    background: #FFF;\n    position: absolute;\n    top: 0;\n    left: 0;\n  }\n"])));
-var UserBookSearchCheck = function () {
-    var dispatch = react_redux_1.useDispatch();
-    return (React.createElement(Div, null,
-        React.createElement(InputCheckBox, { type: "checkbox", onChange: function () {
-                dispatch(UserBookSearchMode_1.changeUserBookSearchMode());
-            }, id: "user-search-option" }),
-        React.createElement(Label, { htmlFor: "user-search-option" }, "\u30DE\u30A4\u30D6\u30C3\u30AF\u691C\u7D22")));
-};
-exports.default = UserBookSearchCheck;
-var templateObject_1, templateObject_2, templateObject_3;
-
-
-/***/ }),
-
 /***/ "./resources/js/bookShelf/menu/store/SearchMode.tsx":
 /*!**********************************************************!*\
   !*** ./resources/js/bookShelf/menu/store/SearchMode.tsx ***!
@@ -42803,32 +42501,6 @@ exports.SearchWord = slice.reducer;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/store/UserBookSearchMode.tsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/bookShelf/menu/store/UserBookSearchMode.tsx ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserBookSearchMode = exports.changeUserBookSearchMode = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = false;
-var slice = toolkit_1.createSlice({
-    name: 'userBookSearchMode',
-    initialState: initialState,
-    reducers: {
-        changeUserBookSearchMode: function (state) { return (!state); }
-    }
-});
-exports.changeUserBookSearchMode = slice.actions.changeUserBookSearchMode;
-exports.UserBookSearchMode = slice.reducer;
-
-
-/***/ }),
-
 /***/ "./resources/js/bookShelf/menu/store/index.tsx":
 /*!*****************************************************!*\
   !*** ./resources/js/bookShelf/menu/store/index.tsx ***!
@@ -42850,68 +42522,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(__webpack_require__(/*! ./SearchMode */ "./resources/js/bookShelf/menu/store/SearchMode.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserBookSearchMode */ "./resources/js/bookShelf/menu/store/UserBookSearchMode.tsx"), exports);
 __exportStar(__webpack_require__(/*! ./SearchWord */ "./resources/js/bookShelf/menu/store/SearchWord.tsx"), exports);
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/search/component/AddBookButton.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/AddBookButton.tsx ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var useAddBook_1 = __importDefault(__webpack_require__(/*! ~/common/hooks/useAddBook */ "./resources/js/bookShelf/common/hooks/useAddBook.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var AddButton = styled_components_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n   background: ", ";\n   width: 14rem;\n   margin-top: auto;\n"], ["\n  ", "\n   background: ", ";\n   width: 14rem;\n   margin-top: auto;\n"])), style_1.ButtonStyle, style_1.color.add);
-var P = styled_components_1.default.p(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n   ", "\n   background: ", ";\n   line-height: 1.5;\n   text-align: center;\n   margin-top: auto;\n   width: 18rem;\n"], ["\n   ", "\n   background: ", ";\n   line-height: 1.5;\n   text-align: center;\n   margin-top: auto;\n   width: 18rem;\n"])), style_1.ButtonStyle, style_1.color.notice);
-var AddBookButton = function (_a) {
-    var book = _a.book;
-    var bookIdList = react_redux_1.useSelector(function (state) { return state.UserBookIdList; });
-    var addBook = useAddBook_1.default(book);
-    return (bookIdList.includes(book.bookId) ?
-        React.createElement(P, null,
-            "\u3053\u306E\u672C\u306F\u672C\u68DA\u306B",
-            React.createElement("br", null),
-            "\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u3059") :
-        React.createElement(AddButton, { onClick: addBook }, "\u672C\u68DA\u306B\u8FFD\u52A0"));
-};
-exports.default = AddBookButton;
-var templateObject_1, templateObject_2;
 
 
 /***/ }),
@@ -42966,21 +42577,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var Book_1 = __importDefault(__webpack_require__(/*! ~/common/component/Book */ "./resources/js/bookShelf/common/component/Book.tsx"));
-var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/component/AddBookButton */ "./resources/js/bookShelf/search/component/AddBookButton.tsx"));
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
 var BookList = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n"])));
 var SearchBookList = function () {
     var searchBookList = react_redux_1.useSelector(function (state) { return state.SearchBookList; });
-    var userBookSearchMode = react_redux_1.useSelector(function (state) { return state.UserBookSearchMode; });
-    var userBookSearchModeCallback = React.useCallback(function () { return userBookSearchMode; }, [searchBookList]);
     var SearchBookListDom = searchBookList.map(function (searchBook, index) {
         return (React.createElement(Div, { key: index },
-            React.createElement(Book_1.default, __assign({}, searchBook)),
-            userBookSearchModeCallback() ?
-                React.createElement(DeleteBookButton_1.default, { bookId: searchBook.bookId }) :
-                React.createElement(AddBookButton_1.default, { book: searchBook })));
+            React.createElement(Book_1.default, __assign({}, searchBook))));
     });
     return (React.createElement(BookList, null, SearchBookListDom));
 };
@@ -43409,125 +43013,6 @@ __exportStar(__webpack_require__(/*! ./SearchUpdate */ "./resources/js/bookShelf
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/DeleteBookButton.tsx ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var useDeleteBook_1 = __importDefault(__webpack_require__(/*! ~/common/hooks/useDeleteBook */ "./resources/js/bookShelf/common/hooks/useDeleteBook.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var Button = styled_components_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", "\n  background: ", ";\n  width: 10rem;\n  margin-top: auto;\n"], ["\n  ", "\n  background: ", ";\n  width: 10rem;\n  margin-top: auto;\n"])), style_1.ButtonStyle, style_1.color.delete);
-var DeleteBookButton = function (_a) {
-    var bookId = _a.bookId;
-    var deleteBook = useDeleteBook_1.default(bookId);
-    return React.createElement(Button, { onClick: deleteBook }, "\u524A\u9664");
-};
-exports.default = DeleteBookButton;
-var templateObject_1;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/component/UserBookList.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserBookList.tsx ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
-var Book_1 = __importDefault(__webpack_require__(/*! ~/common/component/Book */ "./resources/js/bookShelf/common/component/Book.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var BookList = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"])));
-var Div = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
-var UserBookList = function () {
-    var userBookList = react_redux_1.useSelector(function (state) { return state.UserBookList; });
-    var UserBookListDom = userBookList.map(function (userBook, index) { return (React.createElement(Div, { key: index },
-        React.createElement(Book_1.default, __assign({}, userBook)),
-        React.createElement(DeleteBookButton_1.default, { bookId: userBook.bookId }))); });
-    return (React.createElement(BookList, null, UserBookListDom));
-};
-exports.default = UserBookList;
-var templateObject_1, templateObject_2;
-
-
-/***/ }),
-
 /***/ "./resources/js/bookShelf/user/component/UserContents.tsx":
 /*!****************************************************************!*\
   !*** ./resources/js/bookShelf/user/component/UserContents.tsx ***!
@@ -43565,420 +43050,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var UserPaginate_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserPaginate */ "./resources/js/bookShelf/user/component/UserPaginate.tsx"));
-var UserMessage_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserMessage */ "./resources/js/bookShelf/user/component/UserMessage.tsx"));
-var UserBookList_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserBookList */ "./resources/js/bookShelf/user/component/UserBookList.tsx"));
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2rem 0;\n  min-height: 80vh;\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2rem 0;\n  min-height: 80vh;\n"])), style_1.color.user);
+var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3.5rem 0 2rem 0;\n  min-height: 80vh;\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3.5rem 0 2rem 0;\n  min-height: 80vh;\n"])), style_1.color.user);
+var P = styled_components_1.default.p(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"], ["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"])));
 var UserContents = function () {
     return (React.createElement(Contents, null,
-        React.createElement(UserMessage_1.default, null),
-        React.createElement(UserPaginate_1.default, null),
-        React.createElement(UserBookList_1.default, null),
-        React.createElement(UserPaginate_1.default, { option: function () { window.scroll(0, 150); } })));
+        React.createElement(P, null, "\u672C\u68DA\u3092\u4F7F\u7528\u3059\u308B\u3068\u304A\u6C17\u306B\u5165\u308A\u306E\u66F8\u7C4D\u3092\u767B\u9332\u51FA\u6765\u307E\u3059\u3002"),
+        React.createElement(P, null, "\u672C\u68DA\u3092\u5229\u7528\u3059\u308B\u5834\u5408\u306F\u30ED\u30B0\u30A4\u30F3\u307E\u305F\u306F\u65B0\u898F\u767B\u9332\u3092\u884C\u3063\u3066\u4E0B\u3055\u3044\u3002")));
 };
 exports.default = UserContents;
-var templateObject_1;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/component/UserMessage.tsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserMessage.tsx ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var ErrorMessage_1 = __importDefault(__webpack_require__(/*! ~/common/component/ErrorMessage */ "./resources/js/bookShelf/common/component/ErrorMessage.tsx"));
-var Loding_1 = __importDefault(__webpack_require__(/*! ~/common/component/Loding */ "./resources/js/bookShelf/common/component/Loding.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"], ["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"])));
-var UserMessage = function () {
-    var userTotalItems = react_redux_1.useSelector(function (state) { return state.UserTotalItems; });
-    var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
-    var lodingState = react_redux_1.useSelector(function (state) { return state.LodingState; });
-    var userResult;
-    if (lodingState || errorMessage) {
-        userResult = null;
-    }
-    else if (!userTotalItems) {
-        userResult = React.createElement(React.Fragment, null,
-            "\u672C\u68DA\u306B\u66F8\u7C4D\u304C\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002",
-            React.createElement("br", null),
-            "\u65B0\u3057\u304F\u66F8\u7C4D\u3092\u8FFD\u52A0\u3059\u308B\u5834\u5408\u306F\u691C\u7D22\u7D50\u679C\u304B\u3089\u672C\u68DA\u306B\u8FFD\u52A0\u3059\u308B\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u4E0B\u3055\u3044\u3002");
-    }
-    else {
-        userResult = "\u66F8\u7C4D\u6570 " + userTotalItems;
-    }
-    return (React.createElement(Div, null,
-        errorMessage ? React.createElement(ErrorMessage_1.default, null) : React.createElement(Loding_1.default, null),
-        userResult && React.createElement("p", null, userResult)));
-};
-exports.default = UserMessage;
-var templateObject_1;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/component/UserOrderSelect.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserOrderSelect.tsx ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var UserOrder_1 = __webpack_require__(/*! ~/user/store/UserOrder */ "./resources/js/bookShelf/user/store/UserOrder.tsx");
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Select = styled_components_1.default.select(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"], ["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"])));
-var UserOrderSelect = function () {
-    var dispatch = react_redux_1.useDispatch();
-    var userOrderHandleChange = function (e) {
-        dispatch(UserOrder_1.setUserOrder(e.target.value));
-    };
-    return (React.createElement(Select, { name: "order", onChange: userOrderHandleChange },
-        React.createElement("option", { value: "created_at DESC" }, "\u767B\u9332\u65E5\u304C\u65B0\u3057\u3044\u9806"),
-        React.createElement("option", { value: "created_at ASC" }, "\u767B\u9332\u65E5\u304C\u53E4\u3044\u9806"),
-        React.createElement("option", { value: "published_date DESC" }, "\u51FA\u7248\u65E5\u304C\u65B0\u3057\u3044\u9806"),
-        React.createElement("option", { value: "published_date ASC" }, "\u51FA\u7248\u65E5\u304C\u53E4\u3044\u9806")));
-};
-exports.default = UserOrderSelect;
-var templateObject_1;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/component/UserPaginate.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserPaginate.tsx ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var UserSelectPage_1 = __webpack_require__(/*! ~/user/store/UserSelectPage */ "./resources/js/bookShelf/user/store/UserSelectPage.tsx");
-var Paginate_1 = __importDefault(__webpack_require__(/*! ~/common/component/Paginate */ "./resources/js/bookShelf/common/component/Paginate.tsx"));
-var UserPaginate = function (props) {
-    var totalItems = react_redux_1.useSelector(function (state) { return state.UserTotalItems; });
-    var selectPage = react_redux_1.useSelector(function (state) { return state.UserSelectPage; });
-    var order = react_redux_1.useSelector(function (state) { return state.UserOrder; });
-    var dispatch = react_redux_1.useDispatch();
-    var firstUpdate = React.useRef(true);
-    var changePage = function (value) {
-        dispatch(UserSelectPage_1.setUserSelectPage(value));
-        props.option && props.option();
-    };
-    React.useEffect(function () {
-        if (firstUpdate.current) {
-            firstUpdate.current = false;
-            return;
-        }
-        dispatch(UserSelectPage_1.setUserSelectPage(1));
-    }, [order]);
-    return (React.createElement(Paginate_1.default, { totalItems: totalItems, selectPage: selectPage, handleClick: changePage }));
-};
-exports.default = UserPaginate;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserBookIdList.tsx":
-/*!**************************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserBookIdList.tsx ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
-var _a;
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserBookIdList = exports.addUserBookIdList = exports.setUserBookIdList = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = [];
-var slice = toolkit_1.createSlice({
-    name: 'userBookIdList',
-    initialState: initialState,
-    reducers: {
-        setUserBookIdList: function (state, action) {
-            return action.payload;
-        },
-        addUserBookIdList: function (state, _a) {
-            var payload = _a.payload;
-            return (__spreadArrays(state, [payload]));
-        }
-    }
-});
-exports.setUserBookIdList = (_a = slice.actions, _a.setUserBookIdList), exports.addUserBookIdList = _a.addUserBookIdList;
-exports.UserBookIdList = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserBookList.tsx":
-/*!************************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserBookList.tsx ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserBookList = exports.setUserBookList = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = [];
-var slice = toolkit_1.createSlice({
-    name: 'userBookList',
-    initialState: initialState,
-    reducers: {
-        setUserBookList: function (state, _a) {
-            var payload = _a.payload;
-            return (payload);
-        }
-    }
-});
-exports.setUserBookList = slice.actions.setUserBookList;
-exports.UserBookList = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserOrder.tsx":
-/*!*********************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserOrder.tsx ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserOrder = exports.setUserOrder = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = 'created_at DESC';
-var slice = toolkit_1.createSlice({
-    name: 'userOrder',
-    initialState: initialState,
-    reducers: {
-        setUserOrder: function (state, _a) {
-            var payload = _a.payload;
-            return (payload);
-        }
-    }
-});
-exports.setUserOrder = slice.actions.setUserOrder;
-exports.UserOrder = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserSelectPage.tsx":
-/*!**************************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserSelectPage.tsx ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserSelectPage = exports.setUserSelectPage = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = 1;
-var slice = toolkit_1.createSlice({
-    name: 'userSelectPage',
-    initialState: initialState,
-    reducers: {
-        setUserSelectPage: function (state, _a) {
-            var payload = _a.payload;
-            return (payload);
-        }
-    }
-});
-exports.setUserSelectPage = slice.actions.setUserSelectPage;
-exports.UserSelectPage = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserTotalItems.tsx":
-/*!**************************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserTotalItems.tsx ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserTotalItems = exports.setUserTotalItems = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = 0;
-var slice = toolkit_1.createSlice({
-    name: 'userTotalItems',
-    initialState: initialState,
-    reducers: {
-        setUserTotalItems: function (state, _a) {
-            var payload = _a.payload;
-            return (payload);
-        }
-    }
-});
-exports.setUserTotalItems = slice.actions.setUserTotalItems;
-exports.UserTotalItems = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/UserUpdate.tsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/UserUpdate.tsx ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserUpdate = exports.updateUserBookList = void 0;
-var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = false;
-var slice = toolkit_1.createSlice({
-    name: 'userUpdate',
-    initialState: initialState,
-    reducers: {
-        updateUserBookList: function (state) { return (!state); }
-    }
-});
-exports.updateUserBookList = slice.actions.updateUserBookList;
-exports.UserUpdate = slice.reducer;
-
-
-/***/ }),
-
-/***/ "./resources/js/bookShelf/user/store/index.tsx":
-/*!*****************************************************!*\
-  !*** ./resources/js/bookShelf/user/store/index.tsx ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(__webpack_require__(/*! ./UserBookList */ "./resources/js/bookShelf/user/store/UserBookList.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserOrder */ "./resources/js/bookShelf/user/store/UserOrder.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserBookIdList */ "./resources/js/bookShelf/user/store/UserBookIdList.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserSelectPage */ "./resources/js/bookShelf/user/store/UserSelectPage.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserTotalItems */ "./resources/js/bookShelf/user/store/UserTotalItems.tsx"), exports);
-__exportStar(__webpack_require__(/*! ./UserUpdate */ "./resources/js/bookShelf/user/store/UserUpdate.tsx"), exports);
+var templateObject_1, templateObject_2;
 
 
 /***/ }),

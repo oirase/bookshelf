@@ -6,6 +6,7 @@ import { setSearchSelectPage } from '~/search/store/SearchSelectPage'
 import { changeSearchMode } from '~/menu/store/SearchMode'
 import { useHistory } from 'react-router-dom'
 import { BookType } from '~/common/type/BookList'
+import { bookPageRoute } from '~/common/config'
 import styled from 'styled-components'
 
 const Ul = styled.ul`
@@ -68,7 +69,7 @@ const Book: React.FC<BookType> = (props) => {
 
 	return (
 		<Ul>
-			<ImgWrapper  onClick={() => { history.push({ pathname: `/bookshelf/book/${props.bookId}`, state: props}) }}>{ props.thumbnail && <img src={props.thumbnail} /> }</ImgWrapper>
+			<ImgWrapper  onClick={() => { history.push({ pathname: `${bookPageRoute}/${props.bookId}`, state: props}) }}>{ props.thumbnail && <img src={props.thumbnail} /> }</ImgWrapper>
 			{ props.title && <Li>{props.title}</Li> }
 			{ authorsDom && <Li>{authorsDom}</Li> }
 			{ props.publishedDate && <Li>{props.publishedDate}</Li> }

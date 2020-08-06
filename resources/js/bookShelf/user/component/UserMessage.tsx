@@ -13,6 +13,11 @@ const Div = styled.div`
   line-height: 1.5;
 `
 
+const P = styled.p`
+  //height: 5rem;
+  padding-bottom: 2.5rem;
+`
+
 const UserMessage: React.FC = () => {
 
 	const userTotalItems = useSelector((state: Store) => state.UserTotalItems)
@@ -25,8 +30,8 @@ const UserMessage: React.FC = () => {
 		userResult = null
 	} else if(!userTotalItems) {
 		userResult = <>
-      本棚に書籍が登録されていません。<br />
-      新しく書籍を追加する場合は検索結果から本棚に追加するボタンをクリックして下さい。
+      <P>本棚に書籍が登録されていません。</P>
+      <P>新しく書籍を追加する場合は検索結果から本棚に追加するボタンをクリックして下さい。</P>
 		</>
 	} else {
 		userResult = `書籍数 ${userTotalItems}`

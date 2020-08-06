@@ -11,7 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('resources/js/index.ts', 'public/js')
+mix//.ts('resources/js/index.ts', 'public/js')
+   .ts('resources/js/index.ts', 'public/js/gest.js')
+   //.ts('resources/js/gest.ts', 'public/js')
    .ts('resources/js/authView.ts', 'public/js')
    .sass('resources/sass/index.scss', 'public/css')
    .sass('resources/sass/book.scss', 'public/css')
