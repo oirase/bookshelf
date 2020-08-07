@@ -41530,7 +41530,7 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lodingImage = exports.bookPageRoute = exports.topPageRoute = exports.root = void 0;
-var debug = true;
+var debug = false;
 var root, topPageRoute, bookPageRoute;
 exports.root = root;
 exports.topPageRoute = topPageRoute;
@@ -42455,7 +42455,7 @@ var templateObject_1, templateObject_2, templateObject_3;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SearchMode = exports.changeSearchMode = void 0;
 var toolkit_1 = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
-var initialState = false;
+var initialState = true;
 var slice = toolkit_1.createSlice({
     name: 'searchMode',
     initialState: initialState,

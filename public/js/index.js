@@ -41530,7 +41530,7 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lodingImage = exports.bookPageRoute = exports.topPageRoute = exports.root = void 0;
-var debug = true;
+var debug = false;
 var root, topPageRoute, bookPageRoute;
 exports.root = root;
 exports.topPageRoute = topPageRoute;
@@ -43626,6 +43626,7 @@ var ErrorMessage_1 = __importDefault(__webpack_require__(/*! ~/common/component/
 var Loding_1 = __importDefault(__webpack_require__(/*! ~/common/component/Loding */ "./resources/js/bookShelf/common/component/Loding.tsx"));
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"], ["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"])));
+var P = styled_components_1.default.p(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"], ["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"])));
 var UserMessage = function () {
     var userTotalItems = react_redux_1.useSelector(function (state) { return state.UserTotalItems; });
     var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
@@ -43636,9 +43637,8 @@ var UserMessage = function () {
     }
     else if (!userTotalItems) {
         userResult = React.createElement(React.Fragment, null,
-            "\u672C\u68DA\u306B\u66F8\u7C4D\u304C\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002",
-            React.createElement("br", null),
-            "\u65B0\u3057\u304F\u66F8\u7C4D\u3092\u8FFD\u52A0\u3059\u308B\u5834\u5408\u306F\u691C\u7D22\u7D50\u679C\u304B\u3089\u672C\u68DA\u306B\u8FFD\u52A0\u3059\u308B\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u4E0B\u3055\u3044\u3002");
+            React.createElement(P, null, "\u672C\u68DA\u306B\u66F8\u7C4D\u304C\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002"),
+            React.createElement(P, null, "\u65B0\u3057\u304F\u66F8\u7C4D\u3092\u8FFD\u52A0\u3059\u308B\u5834\u5408\u306F\u691C\u7D22\u7D50\u679C\u304B\u3089\u672C\u68DA\u306B\u8FFD\u52A0\u3059\u308B\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u4E0B\u3055\u3044\u3002"));
     }
     else {
         userResult = "\u66F8\u7C4D\u6570 " + userTotalItems;
@@ -43648,7 +43648,7 @@ var UserMessage = function () {
         userResult && React.createElement("p", null, userResult)));
 };
 exports.default = UserMessage;
-var templateObject_1;
+var templateObject_1, templateObject_2;
 
 
 /***/ }),
