@@ -1,16 +1,16 @@
 
-const debug = true
+const debug = false
 
 let root: string, topPageRoute: string, bookPageRoute: string
 
 if(debug) {
-  
+
   root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
   topPageRoute = '/bookshelf/'
   bookPageRoute = '/bookshelf/book'
 
 } else {
-  
+
   root = 'https://bookshelf-booksearch.herokuapp.com/'
   topPageRoute = '/'
   bookPageRoute = '/book'
