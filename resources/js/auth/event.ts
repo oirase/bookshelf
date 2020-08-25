@@ -2,18 +2,10 @@ import { ColorType } from './constant'
 
 const inputAttrType = ["text", "password", "email", "textarea"]
 
-export const checkDisplay = (ele: HTMLElement) => {
-  const eleStyle = window.getComputedStyle(ele, null).display
-  if (eleStyle === 'block') {
-    ele.style.display = 'none'
-  } 
+export const toggleDisplay = (Element: HTMLElement, value: string = 'block') => {
+  const eleStyle = (()=>window.getComputedStyle(Element, null).display)()
+  Element.style.display = eleStyle === 'none' ? value : 'none'
 }
-
-export const toggleDisplay = (Element: HTMLElement) => {
-  const eleStyle = window.getComputedStyle(Element, null).display
-  Element.style.display = eleStyle === 'block' ? 'none' : 'block'
-}
-
 
 export const errorCheck = (ele: HTMLElement, errorSelector: string) => {
   const errorElement = ele.querySelectorAll(errorSelector)
@@ -30,18 +22,33 @@ export const changeFormColor = (e: Event, color: ColorType) => {
   }
 }
 
-const disabledElment = (ele: Element) => {
+export const checkDisplay = (ele: Element) => {
   const display = window.getComputedStyle(ele, null).display
-  if (display === 'block') {
+  if (display !== 'none') {
     (ele as HTMLElement).style.display = 'none'
   }
 }
 
-export const disabledAdjacencyElement = (ele: HTMLElement) => {
-  
-  const previous = ele.previousElementSibling || null
+export const disabledNextElement = (ele: HTMLElement) => {
+
   const next = ele.nextElementSibling || null
-  previous && disabledElment(previous)
-  next && disabledElment(next)
+  next && checkDisplay(next)
 
 }
+
+export const disabledPreviousElement = (ele: HTMLElement) => {
+
+  const previous = ele.previousElementSibling || null
+  previous && checkDisplay(previous)
+}
+
+export const closeDisplay = (e: Event, colletion: HTMLCollection, wrapper: string) => {
+  e.preventDefault()
+  if(e.target) {
+    if(Array.prototype.includes.call(colletion, e.target)) {
+          const ele = (e.target as Element).closest(wrapper)
+          ele && checkDisplay(ele as HTMLElement)
+    }
+  }
+}
+

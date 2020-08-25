@@ -7,4 +7,5 @@
     @else
         <a href="{{ route('contact') }}">お問い合わせ</a>
     @endif
+    {{ $slot }}
 </footer>

@@ -41246,10 +41246,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/common/component/Book.tsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/bookShelf/common/component/Book.tsx ***!
-  \**********************************************************/
+/***/ "./resources/js/bookShelf/common/components/Book.tsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/Book.tsx ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41332,10 +41332,124 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/common/component/ErrorMessage.tsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/bookShelf/common/component/ErrorMessage.tsx ***!
-  \******************************************************************/
+/***/ "./resources/js/bookShelf/common/components/BookList.tsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/BookList.tsx ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var Book_1 = __importDefault(__webpack_require__(/*! ~/common/components/Book */ "./resources/js/bookShelf/common/components/Book.tsx"));
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var BookListWapper = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"])));
+var Div = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+var BookList = function (_a) {
+    var bookDataList = _a.bookDataList, render = _a.render;
+    var BookListDom = bookDataList.map(function (bookData, index) { return (React.createElement(Div, { key: index },
+        React.createElement(Book_1.default, __assign({}, bookData)),
+        render(bookData))); });
+    return (React.createElement(BookListWapper, null, BookListDom));
+};
+exports.default = BookList;
+var templateObject_1, templateObject_2;
+
+
+/***/ }),
+
+/***/ "./resources/js/bookShelf/common/components/Contents.tsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/Contents.tsx ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var ContentsWrapper = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  //padding: 1rem 0 2rem 0;\n  padding: 1rem 0 2.5rem 0;\n  min-height: 80vh;\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  //padding: 1rem 0 2rem 0;\n  padding: 1rem 0 2.5rem 0;\n  min-height: 80vh;\n"])), function (props) { return props.color; });
+var Contents = function (_a) {
+    var color = _a.color, children = _a.children;
+    return (React.createElement(ContentsWrapper, { color: color }, children));
+};
+exports.default = Contents;
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./resources/js/bookShelf/common/components/ErrorMessage.tsx":
+/*!*******************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/ErrorMessage.tsx ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41383,10 +41497,10 @@ var templateObject_1;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/common/component/Loding.tsx":
-/*!************************************************************!*\
-  !*** ./resources/js/bookShelf/common/component/Loding.tsx ***!
-  \************************************************************/
+/***/ "./resources/js/bookShelf/common/components/Loding.tsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/Loding.tsx ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41424,10 +41538,113 @@ exports.default = Loding;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/common/component/Paginate.tsx":
+/***/ "./resources/js/bookShelf/common/components/Message.tsx":
 /*!**************************************************************!*\
-  !*** ./resources/js/bookShelf/common/component/Paginate.tsx ***!
+  !*** ./resources/js/bookShelf/common/components/Message.tsx ***!
   \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var ErrorMessage_1 = __importDefault(__webpack_require__(/*! ~/common/components/ErrorMessage */ "./resources/js/bookShelf/common/components/ErrorMessage.tsx"));
+var Loding_1 = __importDefault(__webpack_require__(/*! ~/common/components/Loding */ "./resources/js/bookShelf/common/components/Loding.tsx"));
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"], ["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"])));
+var P = styled_components_1.default.p(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  //height: 5rem;\n  padding-top: 1rem;\n"], ["\n  //height: 5rem;\n  padding-top: 1rem;\n"])));
+var Message = function (_a) {
+    var result = _a.result, error = _a.error;
+    return (React.createElement(Div, null,
+        error ? React.createElement(ErrorMessage_1.default, null) : React.createElement(Loding_1.default, null),
+        result && React.createElement("p", null, result)));
+};
+exports.default = Message;
+var templateObject_1, templateObject_2;
+
+
+/***/ }),
+
+/***/ "./resources/js/bookShelf/common/components/OrderSelect.tsx":
+/*!******************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/OrderSelect.tsx ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var Select = styled_components_1.default.select(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"], ["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"])));
+var OrderSelect = function (_a) {
+    var handleChange = _a.handleChange, children = _a.children;
+    return (React.createElement(Select, { name: "order", onChange: handleChange }, children));
+};
+exports.default = OrderSelect;
+var templateObject_1;
+
+
+/***/ }),
+
+/***/ "./resources/js/bookShelf/common/components/Paginate.tsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/bookShelf/common/components/Paginate.tsx ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41530,7 +41747,7 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lodingImage = exports.bookPageRoute = exports.topPageRoute = exports.root = void 0;
-var debug = false;
+var debug = true;
 var root, topPageRoute, bookPageRoute;
 exports.root = root;
 exports.topPageRoute = topPageRoute;
@@ -41877,7 +42094,7 @@ var useGetSearchBookData = function () {
             dispatch(ErrorMessage_1.getBookDataError());
         });
     };
-    React.useEffect(getSearchData, [searchWord, selectPage, order, searchUpdate]);
+    React.useEffect(getSearchData, [searchWord, selectPage, order, searchUpdate, userBookSearchMode]);
 };
 exports.default = useGetSearchBookData;
 
@@ -42195,7 +42412,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var App_1 = __importDefault(__webpack_require__(/*! ~/main/component/App */ "./resources/js/bookShelf/main/component/App.tsx"));
+var App_1 = __importDefault(__webpack_require__(/*! ~/main/components/App */ "./resources/js/bookShelf/main/components/App.tsx"));
 var store_1 = __importDefault(__webpack_require__(/*! ~/main/store */ "./resources/js/bookShelf/main/store/index.tsx"));
 react_dom_1.render(react_1.default.createElement(react_redux_1.Provider, { store: store_1.default },
     react_1.default.createElement(App_1.default, null)), document.getElementById('root'));
@@ -42203,10 +42420,10 @@ react_dom_1.render(react_1.default.createElement(react_redux_1.Provider, { store
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/main/component/App.tsx":
-/*!*******************************************************!*\
-  !*** ./resources/js/bookShelf/main/component/App.tsx ***!
-  \*******************************************************/
+/***/ "./resources/js/bookShelf/main/components/App.tsx":
+/*!********************************************************!*\
+  !*** ./resources/js/bookShelf/main/components/App.tsx ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42218,8 +42435,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-var BookListPage_1 = __importDefault(__webpack_require__(/*! ./BookListPage */ "./resources/js/bookShelf/main/component/BookListPage.tsx"));
-var BookPage_1 = __importDefault(__webpack_require__(/*! ./BookPage */ "./resources/js/bookShelf/main/component/BookPage.tsx"));
+var BookListPage_1 = __importDefault(__webpack_require__(/*! ./BookListPage */ "./resources/js/bookShelf/main/components/BookListPage.tsx"));
+var BookPage_1 = __importDefault(__webpack_require__(/*! ./BookPage */ "./resources/js/bookShelf/main/components/BookPage.tsx"));
 var config_1 = __webpack_require__(/*! ~/common/config */ "./resources/js/bookShelf/common/config/index.tsx");
 var App = function () {
     return (react_1.default.createElement(react_router_dom_1.BrowserRouter, null,
@@ -42241,10 +42458,10 @@ exports.default = App;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/main/component/BookListPage.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/main/component/BookListPage.tsx ***!
-  \****************************************************************/
+/***/ "./resources/js/bookShelf/main/components/BookListPage.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bookShelf/main/components/BookListPage.tsx ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42275,16 +42492,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var Update_1 = __importDefault(__webpack_require__(/*! ~/main/component/Update */ "./resources/js/bookShelf/main/component/Update.tsx"));
-var Scroll_1 = __importDefault(__webpack_require__(/*! ~/main/component/Scroll */ "./resources/js/bookShelf/main/component/Scroll.tsx"));
-var Menu_1 = __importDefault(__webpack_require__(/*! ~/menu/component/Menu */ "./resources/js/bookShelf/menu/component/Menu.tsx"));
-var UserContents_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserContents */ "./resources/js/bookShelf/user/component/UserContents.tsx"));
-var SearchContents_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchContents */ "./resources/js/bookShelf/search/component/SearchContents.tsx"));
+var Update_1 = __importDefault(__webpack_require__(/*! ~/main/components/Update */ "./resources/js/bookShelf/main/components/Update.tsx"));
+var ScrollButton_1 = __importDefault(__webpack_require__(/*! ~/main/components/ScrollButton */ "./resources/js/bookShelf/main/components/ScrollButton.tsx"));
+var Menu_1 = __importDefault(__webpack_require__(/*! ~/menu/components/Menu */ "./resources/js/bookShelf/menu/components/Menu.tsx"));
+var UserContents_1 = __importDefault(__webpack_require__(/*! ~/user/components/UserContents */ "./resources/js/bookShelf/user/components/UserContents.tsx"));
+var SearchContents_1 = __importDefault(__webpack_require__(/*! ~/search/components/SearchContents */ "./resources/js/bookShelf/search/components/SearchContents.tsx"));
 var BookListPage = function () {
     var searchMode = react_redux_1.useSelector(function (state) { return state.SearchMode; });
+    document.title = 'Bookshelf';
     return (React.createElement("div", { className: "home" },
         React.createElement(Update_1.default, null),
-        React.createElement(Scroll_1.default, null),
+        React.createElement(ScrollButton_1.default, null),
         React.createElement(Menu_1.default, null),
         searchMode ? React.createElement(SearchContents_1.default, null) : React.createElement(UserContents_1.default, null)));
 };
@@ -42293,10 +42511,10 @@ exports.default = BookListPage;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/main/component/BookPage.tsx":
-/*!************************************************************!*\
-  !*** ./resources/js/bookShelf/main/component/BookPage.tsx ***!
-  \************************************************************/
+/***/ "./resources/js/bookShelf/main/components/BookPage.tsx":
+/*!*************************************************************!*\
+  !*** ./resources/js/bookShelf/main/components/BookPage.tsx ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42334,8 +42552,8 @@ var react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_mod
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
 var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
-var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/component/AddBookButton */ "./resources/js/bookShelf/search/component/AddBookButton.tsx"));
+var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/components/DeleteBookButton */ "./resources/js/bookShelf/user/components/DeleteBookButton.tsx"));
+var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/components/AddBookButton */ "./resources/js/bookShelf/search/components/AddBookButton.tsx"));
 var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3rem 0 2.5rem 0;\n  min-height: calc(100vh - 10rem);\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 3rem 0 2.5rem 0;\n  min-height: calc(100vh - 10rem);\n"])), style_1.color.search);
 var Book = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  padding: 0 5%;\n  //margin-bottom: 0.9rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n"], ["\n  padding: 0 5%;\n  //margin-bottom: 0.9rem;\n  margin-bottom: 2rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  text-align: center;\n"])));
 var Data = styled_components_1.default.div(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: center;\n  max-width: 100%;\n  margin-bottom: 1rem;\n"], ["\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  align-items: center;\n  max-width: 100%;\n  margin-bottom: 1rem;\n"])));
@@ -42356,6 +42574,8 @@ var BookPage = function () {
             authors = authors.join(', ');
         }
     }
+    document.title = book.title + " |\u3000\u66F8\u7C4D\u60C5\u5831 | Bookshelf";
+    window.scrollTo(0, 0);
     return (React.createElement(Contents, null,
         React.createElement(Book, null,
             React.createElement(Data, null,
@@ -42368,6 +42588,7 @@ var BookPage = function () {
                     book.isbn && React.createElement(Li, null, book.isbn))),
             book.description &&
                 React.createElement(Description, null, book.description)),
+        React.createElement("a", { href: "https://twitter.com/share?ref_src=twsrc%5Etfw", className: "twitter-share-button", "data-show-count": "false" }, "Tweet"),
         React.createElement(A, { onClick: function () { history.back(); } }, "\u691C\u7D22\u30DA\u30FC\u30B8\u3078\u623B\u308B"),
         !searchMode || userBookSearchMode ?
             React.createElement(DeleteBookButton_1.default, { bookId: book.bookId }) :
@@ -42379,10 +42600,10 @@ var templateObject_1, templateObject_2, templateObject_3, templateObject_4, temp
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/main/component/Scroll.tsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/bookShelf/main/component/Scroll.tsx ***!
-  \**********************************************************/
+/***/ "./resources/js/bookShelf/main/components/ScrollButton.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bookShelf/main/components/ScrollButton.tsx ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42430,10 +42651,10 @@ var templateObject_1;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/main/component/Update.tsx":
-/*!**********************************************************!*\
-  !*** ./resources/js/bookShelf/main/component/Update.tsx ***!
-  \**********************************************************/
+/***/ "./resources/js/bookShelf/main/components/Update.tsx":
+/*!***********************************************************!*\
+  !*** ./resources/js/bookShelf/main/components/Update.tsx ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42495,10 +42716,10 @@ exports.default = store;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/component/ChangeModeButton.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/menu/component/ChangeModeButton.tsx ***!
-  \********************************************************************/
+/***/ "./resources/js/bookShelf/menu/components/ChangeModeButton.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/bookShelf/menu/components/ChangeModeButton.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42550,10 +42771,10 @@ var templateObject_1, templateObject_2;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/component/Menu.tsx":
-/*!********************************************************!*\
-  !*** ./resources/js/bookShelf/menu/component/Menu.tsx ***!
-  \********************************************************/
+/***/ "./resources/js/bookShelf/menu/components/Menu.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/bookShelf/menu/components/Menu.tsx ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42588,13 +42809,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var SearchBox_1 = __importDefault(__webpack_require__(/*! ~/menu/component/SearchBox */ "./resources/js/bookShelf/menu/component/SearchBox.tsx"));
-var ChangeModeButton_1 = __importDefault(__webpack_require__(/*! ~/menu/component/ChangeModeButton */ "./resources/js/bookShelf/menu/component/ChangeModeButton.tsx"));
-var UserBookSearchCheck_1 = __importDefault(__webpack_require__(/*! ~/menu/component/UserBookSearchCheck */ "./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx"));
-var UserOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserOrderSelect */ "./resources/js/bookShelf/user/component/UserOrderSelect.tsx"));
-var SearchOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchOrderSelect */ "./resources/js/bookShelf/search/component/SearchOrderSelect.tsx"));
+var SearchBox_1 = __importDefault(__webpack_require__(/*! ~/menu/components/SearchBox */ "./resources/js/bookShelf/menu/components/SearchBox.tsx"));
+var ChangeModeButton_1 = __importDefault(__webpack_require__(/*! ~/menu/components/ChangeModeButton */ "./resources/js/bookShelf/menu/components/ChangeModeButton.tsx"));
+var UserBookSearchCheck_1 = __importDefault(__webpack_require__(/*! ~/menu/components/UserBookSearchCheck */ "./resources/js/bookShelf/menu/components/UserBookSearchCheck.tsx"));
+var UserOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/user/components/UserOrderSelect */ "./resources/js/bookShelf/user/components/UserOrderSelect.tsx"));
+var SearchOrderSelect_1 = __importDefault(__webpack_require__(/*! ~/search/components/SearchOrderSelect */ "./resources/js/bookShelf/search/components/SearchOrderSelect.tsx"));
 var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-//import { CangeModeContext } from '~/main/component/BookListPage'
+//import { CangeModeContext } from '~/main/components/BookListPage'
 var Nav = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #990000;\n  color: #FFF;\n  padding-top: 1.7rem;\n  height: 17.7rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  background: #990000;\n  color: #FFF;\n  padding-top: 1.7rem;\n  height: 17.7rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n"])));
 var Menu = function () {
     var searchMode = react_redux_1.useSelector(function (state) { return state.SearchMode; });
@@ -42610,10 +42831,10 @@ var templateObject_1;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/component/SearchBox.tsx":
-/*!*************************************************************!*\
-  !*** ./resources/js/bookShelf/menu/component/SearchBox.tsx ***!
-  \*************************************************************/
+/***/ "./resources/js/bookShelf/menu/components/SearchBox.tsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/bookShelf/menu/components/SearchBox.tsx ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42688,10 +42909,10 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx":
-/*!***********************************************************************!*\
-  !*** ./resources/js/bookShelf/menu/component/UserBookSearchCheck.tsx ***!
-  \***********************************************************************/
+/***/ "./resources/js/bookShelf/menu/components/UserBookSearchCheck.tsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/bookShelf/menu/components/UserBookSearchCheck.tsx ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42856,10 +43077,10 @@ __exportStar(__webpack_require__(/*! ./SearchWord */ "./resources/js/bookShelf/m
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/AddBookButton.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/AddBookButton.tsx ***!
-  \*******************************************************************/
+/***/ "./resources/js/bookShelf/search/components/AddBookButton.tsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/AddBookButton.tsx ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42916,30 +43137,15 @@ var templateObject_1, templateObject_2;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/SearchBookList.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/SearchBookList.tsx ***!
-  \********************************************************************/
+/***/ "./resources/js/bookShelf/search/components/SearchBookList.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/SearchBookList.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -42965,44 +43171,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var Book_1 = __importDefault(__webpack_require__(/*! ~/common/component/Book */ "./resources/js/bookShelf/common/component/Book.tsx"));
-var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/component/AddBookButton */ "./resources/js/bookShelf/search/component/AddBookButton.tsx"));
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
-var BookList = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n"])));
+var AddBookButton_1 = __importDefault(__webpack_require__(/*! ~/search/components/AddBookButton */ "./resources/js/bookShelf/search/components/AddBookButton.tsx"));
+var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/components/DeleteBookButton */ "./resources/js/bookShelf/user/components/DeleteBookButton.tsx"));
+var BookList_1 = __importDefault(__webpack_require__(/*! ~/common/components/BookList */ "./resources/js/bookShelf/common/components/BookList.tsx"));
 var SearchBookList = function () {
     var searchBookList = react_redux_1.useSelector(function (state) { return state.SearchBookList; });
     var userBookSearchMode = react_redux_1.useSelector(function (state) { return state.UserBookSearchMode; });
     var userBookSearchModeCallback = React.useCallback(function () { return userBookSearchMode; }, [searchBookList]);
-    var SearchBookListDom = searchBookList.map(function (searchBook, index) {
-        return (React.createElement(Div, { key: index },
-            React.createElement(Book_1.default, __assign({}, searchBook)),
-            userBookSearchModeCallback() ?
-                React.createElement(DeleteBookButton_1.default, { bookId: searchBook.bookId }) :
-                React.createElement(AddBookButton_1.default, { book: searchBook })));
-    });
-    return (React.createElement(BookList, null, SearchBookListDom));
+    var button = function (book) { return (userBookSearchModeCallback() ?
+        React.createElement(DeleteBookButton_1.default, { bookId: book.bookId }) :
+        React.createElement(AddBookButton_1.default, { book: book })); };
+    return (React.createElement(BookList_1.default, { bookDataList: searchBookList, render: button }));
 };
 exports.default = SearchBookList;
-var templateObject_1, templateObject_2;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/SearchContents.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/SearchContents.tsx ***!
-  \********************************************************************/
+/***/ "./resources/js/bookShelf/search/components/SearchContents.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/SearchContents.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43027,38 +43221,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var SearchPaginate_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchPaginate */ "./resources/js/bookShelf/search/component/SearchPaginate.tsx"));
-var SearchMessage_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchMessage */ "./resources/js/bookShelf/search/component/SearchMessage.tsx"));
-var SearchBookList_1 = __importDefault(__webpack_require__(/*! ~/search/component/SearchBookList */ "./resources/js/bookShelf/search/component/SearchBookList.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var Contents_1 = __importDefault(__webpack_require__(/*! ~/common/components/Contents */ "./resources/js/bookShelf/common/components/Contents.tsx"));
+var SearchPaginate_1 = __importDefault(__webpack_require__(/*! ~/search/components/SearchPaginate */ "./resources/js/bookShelf/search/components/SearchPaginate.tsx"));
+var SearchMessage_1 = __importDefault(__webpack_require__(/*! ~/search/components/SearchMessage */ "./resources/js/bookShelf/search/components/SearchMessage.tsx"));
+var SearchBookList_1 = __importDefault(__webpack_require__(/*! ~/search/components/SearchBookList */ "./resources/js/bookShelf/search/components/SearchBookList.tsx"));
 var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2.5rem 0;\n  min-height: 80vh;\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2.5rem 0;\n  min-height: 80vh;\n"])), style_1.color.search);
 var SearchContents = function () {
-    return (React.createElement(Contents, null,
+    return (React.createElement(Contents_1.default, { color: style_1.color.search },
         React.createElement(SearchMessage_1.default, null),
         React.createElement(SearchPaginate_1.default, null),
         React.createElement(SearchBookList_1.default, null),
         React.createElement(SearchPaginate_1.default, { option: function () { window.scroll(0, 150); } })));
 };
 exports.default = SearchContents;
-var templateObject_1;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/SearchMessage.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/SearchMessage.tsx ***!
-  \*******************************************************************/
+/***/ "./resources/js/bookShelf/search/components/SearchMessage.tsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/SearchMessage.tsx ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43084,55 +43272,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var ErrorMessage_1 = __importDefault(__webpack_require__(/*! ~/common/component/ErrorMessage */ "./resources/js/bookShelf/common/component/ErrorMessage.tsx"));
-var Loding_1 = __importDefault(__webpack_require__(/*! ~/common/component/Loding */ "./resources/js/bookShelf/common/component/Loding.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"], ["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"])));
+var Message_1 = __importDefault(__webpack_require__(/*! ~/common/components/Message */ "./resources/js/bookShelf/common/components/Message.tsx"));
 var SearchMessage = function () {
     var searchTotalItems = react_redux_1.useSelector(function (state) { return state.SearchTotalItems; });
     var searchBookList = react_redux_1.useSelector(function (state) { return state.SearchBookList; });
     var searchWord = react_redux_1.useSelector(function (state) { return state.SearchWord; });
     var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
     var lodingState = react_redux_1.useSelector(function (state) { return state.LodingState; });
-    var SearchResult;
+    var result;
     if (lodingState || errorMessage) {
-        SearchResult = null;
+        result = null;
     }
     else if (!searchWord) {
-        SearchResult = '検索語句を入力して下さい';
+        result = '検索語句を入力して下さい';
     }
     else if (!searchTotalItems) {
-        SearchResult = '書籍が見つかりませんでした';
+        result = '書籍が見つかりませんでした';
     }
     else if (searchBookList.length === 0) {
-        SearchResult = 'このページ以降は検索結果がありません';
+        result = 'このページ以降は検索結果がありません';
     }
     else {
-        SearchResult = "\u691C\u7D22\u6570 " + searchTotalItems + "\u3000\u4EF6";
+        result = "\u691C\u7D22\u6570 " + searchTotalItems + "\u3000\u4EF6";
     }
-    return (React.createElement(Div, null,
-        errorMessage ? React.createElement(ErrorMessage_1.default, null) : React.createElement(Loding_1.default, null),
-        SearchResult && React.createElement("p", null, SearchResult)));
+    return React.createElement(Message_1.default, { result: result, error: errorMessage });
 };
 exports.default = SearchMessage;
-var templateObject_1;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/SearchOrderSelect.tsx":
-/*!***********************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/SearchOrderSelect.tsx ***!
-  \***********************************************************************/
+/***/ "./resources/js/bookShelf/search/components/SearchOrderSelect.tsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/SearchOrderSelect.tsx ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43160,28 +43338,26 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var SearchOrder_1 = __webpack_require__(/*! ~/search/store/SearchOrder */ "./resources/js/bookShelf/search/store/SearchOrder.tsx");
 var SearchSelectPage_1 = __webpack_require__(/*! ~/search/store/SearchSelectPage */ "./resources/js/bookShelf/search/store/SearchSelectPage.tsx");
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Select = styled_components_1.default.select(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"], ["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"])));
+var OrderSelect_1 = __importDefault(__webpack_require__(/*! ~/common/components/OrderSelect */ "./resources/js/bookShelf/common/components/OrderSelect.tsx"));
 var SearchOrderSelect = function () {
     var dispatch = react_redux_1.useDispatch();
-    var searchOrderHandleChange = function (e) {
+    var OrderHandleChange = function (e) {
         dispatch(SearchOrder_1.setSearchOrder(e.target.value));
         dispatch(SearchSelectPage_1.setSearchSelectPage(1));
     };
-    return (React.createElement(Select, { name: "order", onChange: searchOrderHandleChange },
+    return (React.createElement(OrderSelect_1.default, { handleChange: OrderHandleChange },
         React.createElement("option", { value: "relevance" }, "\u95A2\u9023\u5EA6\u306E\u9AD8\u3044\u9806"),
         React.createElement("option", { value: "newest" }, "\u767B\u9332\u65E5\u304C\u65B0\u3057\u3044\u9806")));
 };
 exports.default = SearchOrderSelect;
-var templateObject_1;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/search/component/SearchPaginate.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/search/component/SearchPaginate.tsx ***!
-  \********************************************************************/
+/***/ "./resources/js/bookShelf/search/components/SearchPaginate.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/bookShelf/search/components/SearchPaginate.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43213,7 +43389,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var SearchSelectPage_1 = __webpack_require__(/*! ~/search/store/SearchSelectPage */ "./resources/js/bookShelf/search/store/SearchSelectPage.tsx");
-var Paginate_1 = __importDefault(__webpack_require__(/*! ~/common/component/Paginate */ "./resources/js/bookShelf/common/component/Paginate.tsx"));
+var Paginate_1 = __importDefault(__webpack_require__(/*! ~/common/components/Paginate */ "./resources/js/bookShelf/common/components/Paginate.tsx"));
 var SearchPaginate = function (props) {
     var totalItems = react_redux_1.useSelector(function (state) { return state.SearchTotalItems; });
     var selectPage = react_redux_1.useSelector(function (state) { return state.SearchSelectPage; });
@@ -43409,10 +43585,10 @@ __exportStar(__webpack_require__(/*! ./SearchUpdate */ "./resources/js/bookShelf
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx":
-/*!********************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/DeleteBookButton.tsx ***!
-  \********************************************************************/
+/***/ "./resources/js/bookShelf/user/components/DeleteBookButton.tsx":
+/*!*********************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/DeleteBookButton.tsx ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43461,30 +43637,15 @@ var templateObject_1;
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/UserBookList.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserBookList.tsx ***!
-  \****************************************************************/
+/***/ "./resources/js/bookShelf/user/components/UserBookList.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/UserBookList.tsx ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43510,37 +43671,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/component/DeleteBookButton */ "./resources/js/bookShelf/user/component/DeleteBookButton.tsx"));
-var Book_1 = __importDefault(__webpack_require__(/*! ~/common/component/Book */ "./resources/js/bookShelf/common/component/Book.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var BookList = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"], ["\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-around;\n  align-content: flex-start;\n  padding-top: 1.5rem;\n  min-height: 80vh;\n  width: 100%;\n"])));
-var Div = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  margin-bottom: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
+var DeleteBookButton_1 = __importDefault(__webpack_require__(/*! ~/user/components/DeleteBookButton */ "./resources/js/bookShelf/user/components/DeleteBookButton.tsx"));
+var BookList_1 = __importDefault(__webpack_require__(/*! ~/common/components/BookList */ "./resources/js/bookShelf/common/components/BookList.tsx"));
 var UserBookList = function () {
     var userBookList = react_redux_1.useSelector(function (state) { return state.UserBookList; });
-    var UserBookListDom = userBookList.map(function (userBook, index) { return (React.createElement(Div, { key: index },
-        React.createElement(Book_1.default, __assign({}, userBook)),
-        React.createElement(DeleteBookButton_1.default, { bookId: userBook.bookId }))); });
-    return (React.createElement(BookList, null, UserBookListDom));
+    var button = function (book) { return React.createElement(DeleteBookButton_1.default, { bookId: book.bookId }); };
+    return React.createElement(BookList_1.default, { bookDataList: userBookList, render: button });
 };
 exports.default = UserBookList;
-var templateObject_1, templateObject_2;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/UserContents.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserContents.tsx ***!
-  \****************************************************************/
+/***/ "./resources/js/bookShelf/user/components/UserContents.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/UserContents.tsx ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43565,38 +43716,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var UserPaginate_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserPaginate */ "./resources/js/bookShelf/user/component/UserPaginate.tsx"));
-var UserMessage_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserMessage */ "./resources/js/bookShelf/user/component/UserMessage.tsx"));
-var UserBookList_1 = __importDefault(__webpack_require__(/*! ~/user/component/UserBookList */ "./resources/js/bookShelf/user/component/UserBookList.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
+var Contents_1 = __importDefault(__webpack_require__(/*! ~/common/components/Contents */ "./resources/js/bookShelf/common/components/Contents.tsx"));
+var UserPaginate_1 = __importDefault(__webpack_require__(/*! ~/user/components/UserPaginate */ "./resources/js/bookShelf/user/components/UserPaginate.tsx"));
+var UserMessage_1 = __importDefault(__webpack_require__(/*! ~/user/components/UserMessage */ "./resources/js/bookShelf/user/components/UserMessage.tsx"));
+var UserBookList_1 = __importDefault(__webpack_require__(/*! ~/user/components/UserBookList */ "./resources/js/bookShelf/user/components/UserBookList.tsx"));
 var style_1 = __webpack_require__(/*! ~/common/style */ "./resources/js/bookShelf/common/style/index.tsx");
-var Contents = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2rem 0;\n  min-height: 80vh;\n"], ["\n  background: ", ";\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 1rem 0 2rem 0;\n  min-height: 80vh;\n"])), style_1.color.user);
 var UserContents = function () {
-    return (React.createElement(Contents, null,
+    return (React.createElement(Contents_1.default, { color: style_1.color.user },
         React.createElement(UserMessage_1.default, null),
         React.createElement(UserPaginate_1.default, null),
         React.createElement(UserBookList_1.default, null),
         React.createElement(UserPaginate_1.default, { option: function () { window.scroll(0, 150); } })));
 };
 exports.default = UserContents;
-var templateObject_1;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/UserMessage.tsx":
-/*!***************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserMessage.tsx ***!
-  \***************************************************************/
+/***/ "./resources/js/bookShelf/user/components/UserMessage.tsx":
+/*!****************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/UserMessage.tsx ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43622,50 +43767,40 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-var ErrorMessage_1 = __importDefault(__webpack_require__(/*! ~/common/component/ErrorMessage */ "./resources/js/bookShelf/common/component/ErrorMessage.tsx"));
-var Loding_1 = __importDefault(__webpack_require__(/*! ~/common/component/Loding */ "./resources/js/bookShelf/common/component/Loding.tsx"));
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Div = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"], ["\n  height: 7rem;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  line-height: 1.5;\n"])));
-var P = styled_components_1.default.p(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"], ["\n  //height: 5rem;\n  padding-bottom: 2.5rem;\n"])));
+var Message_1 = __importDefault(__webpack_require__(/*! ~/common/components/Message */ "./resources/js/bookShelf/common/components/Message.tsx"));
 var UserMessage = function () {
     var userTotalItems = react_redux_1.useSelector(function (state) { return state.UserTotalItems; });
     var errorMessage = react_redux_1.useSelector(function (state) { return state.ErrorMessage; });
     var lodingState = react_redux_1.useSelector(function (state) { return state.LodingState; });
-    var userResult;
+    var result;
     if (lodingState || errorMessage) {
-        userResult = null;
+        result = null;
     }
     else if (!userTotalItems) {
-        userResult = React.createElement(React.Fragment, null,
-            React.createElement(P, null, "\u672C\u68DA\u306B\u66F8\u7C4D\u304C\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002"),
-            React.createElement(P, null, "\u65B0\u3057\u304F\u66F8\u7C4D\u3092\u8FFD\u52A0\u3059\u308B\u5834\u5408\u306F\u691C\u7D22\u7D50\u679C\u304B\u3089\u672C\u68DA\u306B\u8FFD\u52A0\u3059\u308B\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u4E0B\u3055\u3044\u3002"));
+        result = React.createElement(React.Fragment, null,
+            "\u672C\u68DA\u306B\u66F8\u7C4D\u304C\u767B\u9332\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u3002",
+            React.createElement("br", null),
+            "\u65B0\u3057\u304F\u66F8\u7C4D\u3092\u8FFD\u52A0\u3059\u308B\u5834\u5408\u306F\u691C\u7D22\u7D50\u679C\u304B\u3089\u672C\u68DA\u306B\u8FFD\u52A0\u30DC\u30BF\u30F3\u3092\u30AF\u30EA\u30C3\u30AF\u3057\u3066\u4E0B\u3055\u3044\u3002");
     }
     else {
-        userResult = "\u66F8\u7C4D\u6570 " + userTotalItems;
+        result = "\u66F8\u7C4D\u6570 " + userTotalItems;
     }
-    return (React.createElement(Div, null,
-        errorMessage ? React.createElement(ErrorMessage_1.default, null) : React.createElement(Loding_1.default, null),
-        userResult && React.createElement("p", null, userResult)));
+    return React.createElement(Message_1.default, { result: result, error: errorMessage });
 };
 exports.default = UserMessage;
-var templateObject_1, templateObject_2;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/UserOrderSelect.tsx":
-/*!*******************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserOrderSelect.tsx ***!
-  \*******************************************************************/
+/***/ "./resources/js/bookShelf/user/components/UserOrderSelect.tsx":
+/*!********************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/UserOrderSelect.tsx ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -43692,29 +43827,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var UserOrder_1 = __webpack_require__(/*! ~/user/store/UserOrder */ "./resources/js/bookShelf/user/store/UserOrder.tsx");
-var styled_components_1 = __importDefault(__webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js"));
-var Select = styled_components_1.default.select(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"], ["\n  background: #FFF;\n  width: 20rem;\n  text-align: center;\n  padding: 1px 0;\n"])));
+var OrderSelect_1 = __importDefault(__webpack_require__(/*! ~/common/components/OrderSelect */ "./resources/js/bookShelf/common/components/OrderSelect.tsx"));
 var UserOrderSelect = function () {
     var dispatch = react_redux_1.useDispatch();
-    var userOrderHandleChange = function (e) {
+    var OrderHandleChange = function (e) {
         dispatch(UserOrder_1.setUserOrder(e.target.value));
     };
-    return (React.createElement(Select, { name: "order", onChange: userOrderHandleChange },
+    return (React.createElement(OrderSelect_1.default, { handleChange: OrderHandleChange },
         React.createElement("option", { value: "created_at DESC" }, "\u767B\u9332\u65E5\u304C\u65B0\u3057\u3044\u9806"),
         React.createElement("option", { value: "created_at ASC" }, "\u767B\u9332\u65E5\u304C\u53E4\u3044\u9806"),
         React.createElement("option", { value: "published_date DESC" }, "\u51FA\u7248\u65E5\u304C\u65B0\u3057\u3044\u9806"),
         React.createElement("option", { value: "published_date ASC" }, "\u51FA\u7248\u65E5\u304C\u53E4\u3044\u9806")));
 };
 exports.default = UserOrderSelect;
-var templateObject_1;
 
 
 /***/ }),
 
-/***/ "./resources/js/bookShelf/user/component/UserPaginate.tsx":
-/*!****************************************************************!*\
-  !*** ./resources/js/bookShelf/user/component/UserPaginate.tsx ***!
-  \****************************************************************/
+/***/ "./resources/js/bookShelf/user/components/UserPaginate.tsx":
+/*!*****************************************************************!*\
+  !*** ./resources/js/bookShelf/user/components/UserPaginate.tsx ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43746,7 +43879,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var react_redux_1 = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 var UserSelectPage_1 = __webpack_require__(/*! ~/user/store/UserSelectPage */ "./resources/js/bookShelf/user/store/UserSelectPage.tsx");
-var Paginate_1 = __importDefault(__webpack_require__(/*! ~/common/component/Paginate */ "./resources/js/bookShelf/common/component/Paginate.tsx"));
+var Paginate_1 = __importDefault(__webpack_require__(/*! ~/common/components/Paginate */ "./resources/js/bookShelf/common/components/Paginate.tsx"));
 var UserPaginate = function (props) {
     var totalItems = react_redux_1.useSelector(function (state) { return state.UserTotalItems; });
     var selectPage = react_redux_1.useSelector(function (state) { return state.UserSelectPage; });

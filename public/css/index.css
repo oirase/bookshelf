@@ -146,7 +146,7 @@ select::-ms-expand {
 .form__label,
 .form__label--textarea,
 .form__group {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .form__wrapper,
@@ -156,6 +156,7 @@ select::-ms-expand {
   justify-content: center;
   align-items: center;
   padding: 3.5rem 0 1.6rem 0;
+  position: relative;
 }
 
 .form__wrapper--view-fit {
@@ -246,10 +247,33 @@ select::-ms-expand {
   background: #FF0000;
 }
 
+.form__button--close {
+  border-radius: 5px;
+  color: #FFF;
+  border: 1px solid #FFF;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FF0000;
+  font-weight: bold;
+  margin: 2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-contens: center;
+}
+
+.form__button--close:hover {
+  background: #cc0000;
+}
+
 .form__textarea {
   background: #FFF;
   flex: 0 0 100%;
-  border-radius: 5px;
+  border-radius: 3px;
   height: 18rem;
   border: 1px solid #FF9900;
   padding: 5px;
@@ -264,7 +288,29 @@ select::-ms-expand {
   text-align: center;
   color: #FFF;
   margin-bottom: 2.5rem;
+  line-height: 1.6;
   flex: 0 0 100%;
+}
+
+.form__modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__modal__window {
+  background: #308E77;
+  width: 47rem;
+  max-width: 100%;
+  border: 2px solid #FF9900;
+  border-radius: 5px;
+  padding: 2rem;
 }
 
 .form__error {
@@ -345,11 +391,21 @@ select::-ms-expand {
 }
 
 .footer {
-  height: 4rem;
+  background: #FFCC00;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.share-button {
+  margin-right: 20px;
+  margin-bottom: 2rem;
+}
+
+.share-button__wrapper {
   background: #FFCC00;
   display: flex;
+  padding-top: 3rem;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 

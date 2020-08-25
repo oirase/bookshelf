@@ -1,6 +1,7 @@
 <div {{ $attributes->merge([ 'class' => 'form__wrapper' ]) }}>
     <form class="form" method="POST" action="{{ route('register') }}" >
         @csrf
+        <button class="form__button--close">&#x2613;</button>
         <label class="form__label" for="name">{{ __('Name') }}</label>
         <input value="aaa" class="form__text @error('name') is-invalid @enderror" id="name" type="text" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
         @error('name', 'register')

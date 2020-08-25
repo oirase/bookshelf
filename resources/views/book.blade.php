@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
-    書籍情報
+    {{ $book['title'] }} | 書籍情報
 @endsection
 
 @push('css')
     <link href="{{ asset('css/book.css') }}" rel="stylesheet">
 @endpush
-        
+
 @section('content')
     <div class="contents">
       <div class="book">
@@ -16,7 +16,7 @@
             @isset($book['thumbnail'])
                 <img src="{{ $book['thumbnail'] }}" />
             @endisset
-          </div> 
+          </div>
             <ul class="book__info">
                 @isset($book['title'])
                     <li class="book__text">{{ $book['title'] }}</li>

@@ -41530,7 +41530,7 @@ var templateObject_1, templateObject_2, templateObject_3;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lodingImage = exports.bookPageRoute = exports.topPageRoute = exports.root = void 0;
-var debug = false;
+var debug = true;
 var root, topPageRoute, bookPageRoute;
 exports.root = root;
 exports.topPageRoute = topPageRoute;

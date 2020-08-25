@@ -10,19 +10,20 @@
         <meta property="og:description" content="書籍検索">
         <meta property="og:url" content="{{ route('index') }}">
         <meta property="og:site_name" content="Bookshelf">
-        <meta property="og:image" content="icon/og.png">
+        <meta property="og:image" content="{{ asset('icon/og.png') }}">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="Twitter:site" content="{{ route('index') }}">
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
         @stack('js')
+        <script src="https://kit.fontawesome.com/3bb98976c0.js" crossorigin="anonymous"></script>
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         @stack('css')
-        <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-        <link rel="manifest" href="icon/site.webmanifest">
-        <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icon/favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ asset('icon/site.webmanifest') }}">
+        <link rel="mask-icon" href="{{ asset('icon/safari-pinned-tab.svg" color="#5bbad5') }}">
         @if(Route::currentRouteName() == 'index')
             <title>Bookshelf</title>
         @else
@@ -37,6 +38,11 @@
     <div>
         @yield('content')
     </div>
-    <x-footer class="footer"/>
+    @php
+        $a = "hello welcome";
+    @endphp
+    <x-footer class="footer">
+        <x-share-button />
+    </x-footer>
     </body>
 </html>

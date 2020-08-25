@@ -21,22 +21,22 @@ const useGetSearchBookData = () => {
 	const dispatch = useDispatch()
 
 	const getSearchData =  () => {
-    
+
 		if(!searchWord) return
 		axios()
 			.then(res => {
-        
+
 				selectPage === 1 && dispatch(setSearchTotalItems(res.totalItems))
 				dispatch(setSearchBookList(res.items))
-				errorMessage && dispatch(clearError()) 
+				errorMessage && dispatch(clearError())
 			})
 			.catch(error => {
-        
+
 				dispatch(getBookDataError())
 			})
 	}
 
-	React.useEffect(getSearchData, [searchWord, selectPage, order, searchUpdate])
+	React.useEffect(getSearchData, [searchWord, selectPage, order, searchUpdate, userBookSearchMode])
 
 }
 

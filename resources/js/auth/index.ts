@@ -5,3 +5,5 @@ require('./register.ts')
 require('./login.ts')
 
 require('./config.ts')
+
+require('./close.ts')

@@ -10,19 +10,20 @@
   margin: 0 auto;
 
   @at-root %form__element {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   &--large {
     //height: 60rem;
   }
-  
+
   &__wrapper {
     background: $form--bg;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3.5rem 0 1.6rem 0;
+    position: relative;
 
     &--view-fit {
       @extend .form__wrapper;
@@ -120,13 +121,36 @@
       @extend .form__button;
       background: $delete;
     }
+
+    &--close {
+      border-radius: 5px;
+      color: #FFF;
+      border: 1px solid #FFF;
+      padding: 0;
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $red;
+      font-weight: bold;
+      margin: 2rem;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-contens: center;
+
+      &:hover {
+        background: darken($red, 10%);
+      }
+    }
   }
 
   &__textarea {
     @extend %form__element;
     background: #FFF;
     flex: 0 0 100%;
-    border-radius: 5px;
+    border-radius: 3px;
     height: 18rem;
     border: 1px solid $orange;
     padding: 5px;
@@ -140,11 +164,33 @@
     text-align: center;
     color: #FFF;
     margin-bottom: 2.5rem;
+    line-height: 1.6;
     flex: 0 0 100%;
   }
 
   &__header {
     @extend .form__p;
+  }
+
+  &__modal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__modal__window {
+    background: $form--bg;
+    width: 47rem;
+    max-width: 100%;
+    border: 2px solid $orange;
+    border-radius: 5px;
+    padding: 2rem;
   }
 
   &__error {

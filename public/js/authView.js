@@ -111,6 +111,27 @@ auth && auth.addEventListener('click', function (e) { e.stopPropagation(); });
 
 /***/ }),
 
+/***/ "./resources/js/auth/close.ts":
+/*!************************************!*\
+  !*** ./resources/js/auth/close.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var formCloseButton = document.getElementsByClassName('form__button--close') || null;
+if (formCloseButton) {
+    for (var i = 0; i < formCloseButton.length; ++i) {
+        formCloseButton[i].addEventListener('click', function (e) { event_1.closeDisplay(e, formCloseButton, '.form__wrapper'); });
+    }
+}
+
+
+/***/ }),
+
 /***/ "./resources/js/auth/config.ts":
 /*!*************************************!*\
   !*** ./resources/js/auth/config.ts ***!
@@ -125,11 +146,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
 var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
 var configButton = document.getElementById('auth__button--config') || null;
 var configForm = document.getElementById('auth__form--config') || null;
+var modal = document.getElementById('form__modal') || null;
+var modalButtonOpen = document.getElementById('form__modal--open') || null;
+var modalButtonClose = document.getElementById('form__modal--close') || null;
 if (configButton && configForm) {
     handleClick_1.default(configForm, configButton, constant_1.errorSelector);
+}
+if (modal && modalButtonOpen && modalButtonClose) {
+    [modalButtonOpen, modalButtonClose].forEach(function (ele) { return ele.addEventListener('click', function (e) {
+        e.preventDefault();
+        event_1.toggleDisplay(modal, 'flex');
+    }); });
 }
 
 
@@ -163,17 +194,12 @@ exports.errorSelector = '.form__error';
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.disabledAdjacencyElement = exports.changeFormColor = exports.errorCheck = exports.toggleDisplay = exports.checkDisplay = void 0;
+exports.closeDisplay = exports.disabledPreviousElement = exports.disabledNextElement = exports.checkDisplay = exports.changeFormColor = exports.errorCheck = exports.toggleDisplay = void 0;
 var inputAttrType = ["text", "password", "email", "textarea"];
-exports.checkDisplay = function (ele) {
-    var eleStyle = window.getComputedStyle(ele, null).display;
-    if (eleStyle === 'block') {
-        ele.style.display = 'none';
-    }
-};
-exports.toggleDisplay = function (Element) {
-    var eleStyle = window.getComputedStyle(Element, null).display;
-    Element.style.display = eleStyle === 'block' ? 'none' : 'block';
+exports.toggleDisplay = function (Element, value) {
+    if (value === void 0) { value = 'block'; }
+    var eleStyle = (function () { return window.getComputedStyle(Element, null).display; })();
+    Element.style.display = eleStyle === 'none' ? value : 'none';
 };
 exports.errorCheck = function (ele, errorSelector) {
     var errorElement = ele.querySelectorAll(errorSelector);
@@ -188,17 +214,28 @@ exports.changeFormColor = function (e, color) {
         focusEvent.previousElementSibling.style.backgroundColor = color;
     }
 };
-var disabledElment = function (ele) {
+exports.checkDisplay = function (ele) {
     var display = window.getComputedStyle(ele, null).display;
-    if (display === 'block') {
+    if (display !== 'none') {
         ele.style.display = 'none';
     }
 };
-exports.disabledAdjacencyElement = function (ele) {
-    var previous = ele.previousElementSibling || null;
+exports.disabledNextElement = function (ele) {
     var next = ele.nextElementSibling || null;
-    previous && disabledElment(previous);
-    next && disabledElment(next);
+    next && exports.checkDisplay(next);
+};
+exports.disabledPreviousElement = function (ele) {
+    var previous = ele.previousElementSibling || null;
+    previous && exports.checkDisplay(previous);
+};
+exports.closeDisplay = function (e, colletion, wrapper) {
+    e.preventDefault();
+    if (e.target) {
+        if (Array.prototype.includes.call(colletion, e.target)) {
+            var ele = e.target.closest(wrapper);
+            ele && exports.checkDisplay(ele);
+        }
+    }
 };
 
 
@@ -263,6 +300,7 @@ __webpack_require__(/*! ./body.ts */ "./resources/js/auth/body.ts");
 __webpack_require__(/*! ./register.ts */ "./resources/js/auth/register.ts");
 __webpack_require__(/*! ./login.ts */ "./resources/js/auth/login.ts");
 __webpack_require__(/*! ./config.ts */ "./resources/js/auth/config.ts");
+__webpack_require__(/*! ./close.ts */ "./resources/js/auth/close.ts");
 
 
 /***/ }),
@@ -281,13 +319,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+//import { disabledAdjacencyElement } from './event'
 var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
 var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
 var loginButton = document.getElementById('auth__button--login') || null;
 var loginForm = document.getElementById('auth__form--login') || null;
 if (loginForm && loginButton) {
     handleClick_1.default(loginForm, loginButton, constant_1.errorSelector);
-    loginButton.addEventListener('click', function () { event_1.disabledAdjacencyElement(loginForm); });
+    loginButton.addEventListener('click', function () { event_1.disabledPreviousElement(loginForm); });
 }
 
 
@@ -307,13 +346,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+//import { disabledAdjacencyElement } from './event'
 var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
 var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
 var registerButton = document.getElementById('auth__button--register') || null;
 var registerForm = document.getElementById('auth__form--register') || null;
 if (registerForm && registerButton) {
     handleClick_1.default(registerForm, registerButton, constant_1.errorSelector);
-    registerButton.addEventListener('click', function () { event_1.disabledAdjacencyElement(registerForm); });
+    registerButton.addEventListener('click', function () { event_1.disabledNextElement(registerForm); });
 }
 
 

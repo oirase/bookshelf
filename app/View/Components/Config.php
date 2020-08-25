@@ -7,9 +7,9 @@ use Illuminate\View\Component;
 class Config extends Component
 {
 
-    $name;
+    public $name;
 
-    $email;
+    public $email;
     /**
      * Create a new component instance.
      *

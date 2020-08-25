@@ -39,7 +39,7 @@
 }
 
 .auth {
-  
+
   &__menu {
     display: flex;
     justify-content: center;
@@ -47,13 +47,13 @@
     background: $yellow;
     padding: 2rem 0;
   }
-  
+
   &__button {
     font-size: 2.4rem;
     color: #FFF;
     width: 16rem;
     font-weight: bold;
-    text-align: center; 
+    text-align: center;
   }
 
   &__button--wrapper {
@@ -73,10 +73,27 @@
 }
 
 .footer {
-  height: 4rem;
   background: $yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
   text-align: center;
+  padding: 2rem 0;
+}
+
+.share-button {
+
+  //height: 50px;
+  //width: 200px;
+  margin-right: 20px;
+  margin-bottom: 2rem;
+
+
+  &__wrapper {
+    background: $yellow;
+    display: flex;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

@@ -1,6 +1,7 @@
 <div {{ $attributes->merge([ 'class' => 'form__wrapper' ]) }}>
-    <form class="form--large" action="{{ route('user/update') }}" method="post">
+    <form class="form" action="{{ route('user/update') }}" method="post">
         @csrf
+        <button class="form__button--close" id="form--close">&#x2613;</button>
         <h3 class="form__header">登録情報の変更</h3>
         <p class="form__p">変更する項目を選んで新しい情報を入力し変更ボタンを押して下さい</p>
         <fieldset class="form__group">
@@ -31,6 +32,16 @@
             @enderror
         </fieldset>
         <button class="form__button" type="submit">登録情報を変更</button>
-        <button class="form__button--delete" type="submit" formaction="{{ route('user/delete') }}">アカウントを削除</button>
+        <button class="form__button--delete" id="form__modal--open">アカウントを削除</button>
+        <div class="form__modal" id="form__modal">
+            <div class="form__modal__window">
+                <p class="form__p">アカウント削除の確認です<br>
+                    本棚を含み登録情報は全て削除されます<p>
+                <p class="form__p">削除する場合は削除ボタンを<br>
+                    取り消す場合はキャンセルボタンを押して下さい</p>
+                <button class="form__button" id="form__modal--close">キャンセル</button>
+                <button class="form__button--delete" type="submit" formaction="{{ route('user/delete') }}">削除</button>
+            </div>
+        </div>
     </form>
 </div>
