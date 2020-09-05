@@ -16,7 +16,6 @@
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
         @stack('js')
-        <script src="https://kit.fontawesome.com/3bb98976c0.js" crossorigin="anonymous"></script>
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         @stack('css')
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icon/apple-touch-icon.png') }}">
