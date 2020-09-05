@@ -14,17 +14,6 @@ class UserConfigController extends Controller
 
     private $notice;
 
-    public function __construct(Request $request)
-    {
-       // $this->user = App\User::where('email', $request->email)->first();
-    }
-
-    public function passwordValidator($data) {
-        Validator::make($data, [
-            'password'=> 'required|min:8'
-        ])->validate();
-    }
-
     public function changeUserData(Request $request)
     {
         $this->passwordValidator($request->all());
@@ -43,11 +32,23 @@ class UserConfigController extends Controller
             $this->changePassword($request->all());
         }
 
-        if ($this->notice !== '') {
-            $request->session()->flash('notice', $this->notice);
-        }
+        $this->redirectWithNotice();
+    }
 
-        return redirect()->route('index');
+    public function deleteUserData(Request $request)
+    {
+        $this->passwordValidator($request->all());
+        $this->user = \Auth::user();
+        $this->user->delete();
+        Auth::logout();
+        $this->notice = 'アカウントを削除しました';
+        $this->redirectWithNotice();
+    }
+
+    public function passwordValidator($data) {
+        Validator::make($data, [
+            'password'=> 'required|min:8'
+        ])->validate();
     }
 
     public function changeName($data)
@@ -64,7 +65,7 @@ class UserConfigController extends Controller
     public function changeMailAdress($newMail)
     {
         Validator::make($data, [
-            'newMail' => 'string|max:255|unique:users'
+            'newMail' => 'string|max:255|unique:users,email'
         ])->validate();
 
         $this->user->email = $newMail;
@@ -83,13 +84,12 @@ class UserConfigController extends Controller
         $this->notice = 'パスワードを変更しました';
     }
 
-    public function deleteUserData(Request $request)
+    public function redirectWithNotice()
     {
-        $this->passwordValidator($request->all());
-        $this->user = \Auth::user();
-        $this->user->delete();
-        Auth::logout();
-        $this->notice = 'アカウントを削除しました';
+        if ($this->notice !== '') {
+            $request->session()->flash('notice', $this->notice);
+        }
+        return redirect()->route('index');
     }
 
 }

@@ -11,8 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.ts('resources/js/index.ts', 'public/js')
+mix.ts('resources/js/index_auth.ts', 'public/js/auth.js')
    //.ts('resources/js/index.ts', 'public/js/gest.js')
+   //.ts('resources/js/gest.ts', 'public/js')
+   .ts('resources/js/index_gest.ts', 'public/js/gest.js')
    //.ts('resources/js/gest.ts', 'public/js')
    .ts('resources/js/authView.ts', 'public/js')
    .sass('resources/sass/index.scss', 'public/css')
@@ -25,7 +27,8 @@ mix.ts('resources/js/index.ts', 'public/js')
           path.resolve('./node_modules')
           ],
           alias: {
-            '~': 'bookShelf'
+            '~': 'bookShelf_auth',
+            '@': 'bookShelf_gest',
           }
       }
     })

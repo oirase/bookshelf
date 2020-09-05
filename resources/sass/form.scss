@@ -1,12 +1,11 @@
 
 .form {
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 45rem;
-  text-align: center;
+  $form--bg: #308E77;
+  $form--w: 34rem;
+  $form__text--w: 26rem;
+
+  width: $form--w;
   margin: 0 auto;
 
   @at-root %form__element {
@@ -20,6 +19,7 @@
   &__wrapper {
     background: $form--bg;
     display: flex;
+    max-width: 100%;
     justify-content: center;
     align-items: center;
     padding: 3.5rem 0 1.6rem 0;
@@ -45,16 +45,12 @@
   }
 
   &__label {
-    @extend %form__element;
-    //width: 17rem;
-    height: 3.2rem;
-    display: flex;
-    justify-content: center;
-    flex: 0 0 42%;
-    align-items: center;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
     background: $orange;
-    border-radius: 3px 0 0 3px;
+    border-radius: 3px 3px 0 0;
     color: #FFF;
+    margin-left: ($form--w - $form__text--w) / 2;
 
     &--checkbox {
       @extend %form__element;
@@ -91,10 +87,12 @@
 
   &__text {
     @extend %form__element;
-    flex: 0 0 48%;
-    //width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: $form__text--w;
     height: 3.2rem;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 3px;
     background: #FFF;
     border: 1px solid $orange;
     padding: 0 5px;
@@ -196,6 +194,7 @@
   &__error {
     @extend %form__element;
     //height: 3.2rem;
+    width: $form--w - 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,7 +207,4 @@
     margin-right: auto;
     margin-left: auto;
   }
-
-
-
 }

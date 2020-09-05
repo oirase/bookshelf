@@ -1,1 +1,388 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n(n.s=128)}({12:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.closeDisplay=t.disabledPreviousElement=t.disabledNextElement=t.checkDisplay=t.changeFormColor=t.errorCheck=t.toggleDisplay=void 0;var o=["text","password","email","textarea"];t.toggleDisplay=function(e,t){void 0===t&&(t="block");var n=window.getComputedStyle(e,null).display;e.style.display="none"===n?t:"none"},t.errorCheck=function(e,t){e.querySelectorAll(t).length>0&&(e.style.display="block")},t.changeFormColor=function(e,t){var n=e.target;o.includes(n.type)&&(n.style.borderColor=t,n.previousElementSibling.style.backgroundColor=t)},t.checkDisplay=function(e){"none"!==window.getComputedStyle(e,null).display&&(e.style.display="none")},t.disabledNextElement=function(e){var n=e.nextElementSibling||null;n&&t.checkDisplay(n)},t.disabledPreviousElement=function(e){var n=e.previousElementSibling||null;n&&t.checkDisplay(n)},t.closeDisplay=function(e,n,o){if(e.preventDefault(),e.target&&Array.prototype.includes.call(n,e.target)){var r=e.target.closest(o);r&&t.checkDisplay(r)}}},128:function(e,t,n){e.exports=n(129)},129:function(e,t,n){"use strict";n(130)},130:function(e,t,n){"use strict";n(131),n(132),n(133),n(134),n(135)},131:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n(12),r=n(19),l=document.getElementById("auth")||null,u=document.getElementsByClassName("form")||null;if(u)for(var i=0;i<u.length;++i)u[i].addEventListener("focusin",(function(e){o.changeFormColor(e,r.focusColor)})),u[i].addEventListener("focusout",(function(e){o.changeFormColor(e,r.defaultColor)}));l&&l.addEventListener("click",(function(e){e.stopPropagation()}))},132:function(e,t,n){"use strict";var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=o(n(26)),l=n(12),u=n(19),i=document.getElementById("auth__button--register")||null,c=document.getElementById("auth__form--register")||null;c&&i&&(r.default(c,i,u.errorSelector),i.addEventListener("click",(function(){l.disabledNextElement(c)})))},133:function(e,t,n){"use strict";var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=o(n(26)),l=n(12),u=n(19),i=document.getElementById("auth__button--login")||null,c=document.getElementById("auth__form--login")||null;c&&i&&(r.default(c,i,u.errorSelector),i.addEventListener("click",(function(){l.disabledPreviousElement(c)})))},134:function(e,t,n){"use strict";var o=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=o(n(26)),l=n(12),u=n(19),i=document.getElementById("auth__button--config")||null,c=document.getElementById("auth__form--config")||null,a=document.getElementById("form__modal")||null,d=document.getElementById("form__modal--open")||null,s=document.getElementById("form__modal--close")||null;i&&c&&r.default(c,i,u.errorSelector),a&&d&&s&&[d,s].forEach((function(e){return e.addEventListener("click",(function(e){e.preventDefault(),l.toggleDisplay(a,"flex")}))}))},135:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=n(12),r=document.getElementsByClassName("form__button--close")||null;if(r)for(var l=0;l<r.length;++l)r[l].addEventListener("click",(function(e){o.closeDisplay(e,r,".form__wrapper")}))},19:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.errorSelector=t.focusColor=t.defaultColor=void 0,t.defaultColor="#FF9900",t.focusColor="#5ACAD5",t.errorSelector=".form__error"},26:function(e,t,n){"use strict";var o=this&&this.__createBinding||(Object.create?function(e,t,n,o){void 0===o&&(o=n),Object.defineProperty(e,o,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,o){void 0===o&&(o=n),e[o]=t[n]}),r=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),l=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.hasOwnProperty.call(e,n)&&o(t,e,n);return r(t,e),t};Object.defineProperty(t,"__esModule",{value:!0}),t.handleClick=void 0;var u=l(n(12));t.handleClick=function(e,t,n){t.addEventListener("click",(function(){u.toggleDisplay(e)}));document.body.addEventListener("click",(function(){u.checkDisplay(e)})),u.errorCheck(e,n)},t.default=t.handleClick}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./resources/js/auth/body.ts":
+/*!***********************************!*\
+  !*** ./resources/js/auth/body.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
+var auth = document.getElementById('auth') || null;
+var form = document.getElementsByClassName("form") || null;
+if (form) {
+    for (var i = 0; i < form.length; ++i) {
+        form[i].addEventListener('focusin', function (e) { event_1.changeFormColor(e, constant_1.focusColor); });
+        form[i].addEventListener('focusout', function (e) { event_1.changeFormColor(e, constant_1.defaultColor); });
+    }
+}
+auth && auth.addEventListener('click', function (e) { e.stopPropagation(); });
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/close.ts":
+/*!************************************!*\
+  !*** ./resources/js/auth/close.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var formCloseButton = document.getElementsByClassName('form__button--close') || null;
+if (formCloseButton) {
+    for (var i = 0; i < formCloseButton.length; ++i) {
+        formCloseButton[i].addEventListener('click', function (e) { event_1.closeDisplay(e, formCloseButton, '.form__wrapper'); });
+    }
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/config.ts":
+/*!*************************************!*\
+  !*** ./resources/js/auth/config.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
+var configButton = document.getElementById('auth__button--config') || null;
+var configForm = document.getElementById('auth__form--config') || null;
+var modal = document.getElementById('form__modal') || null;
+var modalButtonOpen = document.getElementById('form__modal--open') || null;
+var modalButtonClose = document.getElementById('form__modal--close') || null;
+if (configButton && configForm) {
+    handleClick_1.default(configForm, configButton, constant_1.errorSelector);
+}
+if (modal && modalButtonOpen && modalButtonClose) {
+    [modalButtonOpen, modalButtonClose].forEach(function (ele) { return ele.addEventListener('click', function (e) {
+        e.preventDefault();
+        event_1.toggleDisplay(modal, 'flex');
+    }); });
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/constant.ts":
+/*!***************************************!*\
+  !*** ./resources/js/auth/constant.ts ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.errorSelector = exports.focusColor = exports.defaultColor = void 0;
+exports.defaultColor = "#FF9900";
+exports.focusColor = "#5ACAD5";
+exports.errorSelector = '.form__error';
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/event.ts":
+/*!************************************!*\
+  !*** ./resources/js/auth/event.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.closeDisplay = exports.disabledPreviousElement = exports.disabledNextElement = exports.checkDisplay = exports.changeFormColor = exports.errorCheck = exports.toggleDisplay = void 0;
+var inputAttrType = ["text", "password", "email", "textarea"];
+exports.toggleDisplay = function (Element, value) {
+    if (value === void 0) { value = 'block'; }
+    var eleStyle = (function () { return window.getComputedStyle(Element, null).display; })();
+    Element.style.display = eleStyle === 'none' ? value : 'none';
+};
+exports.errorCheck = function (ele, errorSelector) {
+    var errorElement = ele.querySelectorAll(errorSelector);
+    if (errorElement.length > 0) {
+        ele.style.display = 'block';
+    }
+};
+exports.changeFormColor = function (e, color) {
+    var focusEvent = e.target;
+    if (inputAttrType.includes(focusEvent.type)) {
+        focusEvent.style.borderColor = color;
+        focusEvent.previousElementSibling.style.backgroundColor = color;
+    }
+};
+exports.checkDisplay = function (ele) {
+    var display = window.getComputedStyle(ele, null).display;
+    if (display !== 'none') {
+        ele.style.display = 'none';
+    }
+};
+exports.disabledNextElement = function (ele) {
+    var next = ele.nextElementSibling || null;
+    next && exports.checkDisplay(next);
+};
+exports.disabledPreviousElement = function (ele) {
+    var previous = ele.previousElementSibling || null;
+    previous && exports.checkDisplay(previous);
+};
+exports.closeDisplay = function (e, colletion, wrapper) {
+    e.preventDefault();
+    if (e.target) {
+        if (Array.prototype.includes.call(colletion, e.target)) {
+            var ele = e.target.closest(wrapper);
+            ele && exports.checkDisplay(ele);
+        }
+    }
+};
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/handleClick.ts":
+/*!******************************************!*\
+  !*** ./resources/js/auth/handleClick.ts ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.handleClick = void 0;
+var handleEvent = __importStar(__webpack_require__(/*! ./event */ "./resources/js/auth/event.ts"));
+exports.handleClick = function (target, button, selector) {
+    button.addEventListener('click', function () {
+        handleEvent.toggleDisplay(target);
+    });
+    var closeDisplay = function () {
+        handleEvent.checkDisplay(target);
+    };
+    document.body.addEventListener('click', closeDisplay);
+    handleEvent.errorCheck(target, selector);
+};
+exports.default = exports.handleClick;
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/index.ts":
+/*!************************************!*\
+  !*** ./resources/js/auth/index.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+__webpack_require__(/*! ./body.ts */ "./resources/js/auth/body.ts");
+__webpack_require__(/*! ./register.ts */ "./resources/js/auth/register.ts");
+__webpack_require__(/*! ./login.ts */ "./resources/js/auth/login.ts");
+__webpack_require__(/*! ./config.ts */ "./resources/js/auth/config.ts");
+__webpack_require__(/*! ./close.ts */ "./resources/js/auth/close.ts");
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/login.ts":
+/*!************************************!*\
+  !*** ./resources/js/auth/login.ts ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+//import { disabledAdjacencyElement } from './event'
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
+var loginButton = document.getElementById('auth__button--login') || null;
+var loginForm = document.getElementById('auth__form--login') || null;
+if (loginForm && loginButton) {
+    handleClick_1.default(loginForm, loginButton, constant_1.errorSelector);
+    loginButton.addEventListener('click', function () { event_1.disabledPreviousElement(loginForm); });
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/auth/register.ts":
+/*!***************************************!*\
+  !*** ./resources/js/auth/register.ts ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var handleClick_1 = __importDefault(__webpack_require__(/*! ./handleClick */ "./resources/js/auth/handleClick.ts"));
+//import { disabledAdjacencyElement } from './event'
+var event_1 = __webpack_require__(/*! ./event */ "./resources/js/auth/event.ts");
+var constant_1 = __webpack_require__(/*! ./constant */ "./resources/js/auth/constant.ts");
+var registerButton = document.getElementById('auth__button--register') || null;
+var registerForm = document.getElementById('auth__form--register') || null;
+if (registerForm && registerButton) {
+    handleClick_1.default(registerForm, registerButton, constant_1.errorSelector);
+    registerButton.addEventListener('click', function () { event_1.disabledNextElement(registerForm); });
+}
+
+
+/***/ }),
+
+/***/ "./resources/js/authView.ts":
+/*!**********************************!*\
+  !*** ./resources/js/authView.ts ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+__webpack_require__(/*! ./auth */ "./resources/js/auth/index.ts");
+
+
+/***/ }),
+
+/***/ 2:
+/*!****************************************!*\
+  !*** multi ./resources/js/authView.ts ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /virtual/networkdesign/Bookshelf/resources/js/authView.ts */"./resources/js/authView.ts");
+
+
+/***/ })
+
+/******/ });

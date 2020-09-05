@@ -38,9 +38,6 @@
     <div>
         @yield('content')
     </div>
-    @php
-        $a = "hello welcome";
-    @endphp
     <x-footer class="footer">
         <x-share-button />
     </x-footer>

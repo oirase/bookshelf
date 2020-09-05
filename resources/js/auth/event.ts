@@ -29,6 +29,7 @@ export const checkDisplay = (ele: Element) => {
   }
 }
 
+
 export const disabledNextElement = (ele: HTMLElement) => {
 
   const next = ele.nextElementSibling || null

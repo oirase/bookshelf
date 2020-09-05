@@ -1,7 +1,8 @@
 {
-    "/js/authView.js": "/js/authView.js",
-    "/js/index.js": "/js/index.js",
+    "/js/auth.js": "/js/auth.js",
     "/css/index.css": "/css/index.css",
     "/css/book.css": "/css/book.css",
-    "/css/mail.css": "/css/mail.css"
+    "/css/mail.css": "/css/mail.css",
+    "/js/authView.js": "/js/authView.js",
+    "/js/gest.js": "/js/gest.js"
 }

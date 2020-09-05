@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes([ 'verify' => true ]);
-
-Route::get('/test', 'TestController@index')->name('test');
-
-Route::get('/mail', 'TestController@previewMail');
+Auth::routes([ 'verify' => false ]);
 
 Route::get('/', 'IndexController@index')->name('index');
 
