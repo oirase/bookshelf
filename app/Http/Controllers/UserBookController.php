@@ -44,7 +44,7 @@ class UserBookController extends Controller
         //$this->user_id = MemberInfo::value('user_id');
 
         $this->limit = 20;
-        $this->column = ['book_id', 'isbn', 'title', 'authors', 'published_date', 'page_count', 'description', 'thumbnail', 'small_thumbnail'];
+        $this->column = ['book_id', 'isbn', 'title', 'authors', 'publisher', 'published_date', 'description', 'page_count', 'thumbnail', 'small_thumbnail'];
     }
 
     public function getUserBookList(Request $request)
@@ -64,7 +64,7 @@ class UserBookController extends Controller
         $result["book_id_list"] =  $book_id;
         $result["items"] = $book_data;
         $result["total_items "] = count($book_id);
-        
+
         return $result;
     }
 
@@ -101,6 +101,7 @@ class UserBookController extends Controller
 
         $this->book_repository->insert($book);
         $this->member_info_repository->insert($this->user_id, $book["book_id"]);
+
         return 'success';
     }
 
