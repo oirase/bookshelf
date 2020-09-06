@@ -1,5 +1,5 @@
 
-const debug = true
+const debug = false
 
 let root: string, topPageRoute: string, bookPageRoute: string
 
