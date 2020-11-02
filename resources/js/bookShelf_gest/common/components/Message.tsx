@@ -8,12 +8,13 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  line-height: 2.5;
+  //line-height: 2.5;
+  line-height: 1.7;
 `
 
 const P = styled.p`
   //height: 5rem;
-  line-height: 1.7;
+  //line-height: 1.7;
 `
 
 interface Props {
@@ -26,7 +27,7 @@ const Message: React.FC<Props> = ({ result, error = '' }) => {
   return (
     <Div>
       { error ? <ErrorMessage /> : <Loding /> }
-      { result && <P>{result}</P> }
+      { result && <p>{result}</p> }
     </Div>
   )
 }

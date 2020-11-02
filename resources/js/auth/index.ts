@@ -1,9 +1,9 @@
-require('./body.ts')
+require('./handleBody.ts')
 
-require('./register.ts')
+require('./handleAuth.ts')
 
-require('./login.ts')
+require('./changeFormColor.ts')
 
-require('./config.ts')
+require('./validationErrorCheck.ts')
 
-require('./close.ts')
+require('./toggleModalWindow.ts')

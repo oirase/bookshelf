@@ -1,6 +1,6 @@
 <div class="share-button__wrapper">
     <div>
-        <a href="https://twiter.com/share?url={{ $url }}"><img class="share-button" src="{{ asset('share/twitter.svg') }}"></a>
+        <a href="https://twitter.com/share?url={{ $url }}"><img class="share-button" src="{{ asset('share/twitter.svg') }}"></a>
         <a href="https://getpocket.com/edit?url={{ $url }}&title=Bookshelf" rel="nofollow" rel="nofollow" target="_blank"><img class="share-button" src="{{ asset('share/pocket.svg') }}"></a>
         <a href="https://www.facebook.com/share.php?u={{ $url }}" rel="nofollow" target="_blank"><img class="share-button" src="{{ asset('share/facebook.svg') }}"></a>
     </div>

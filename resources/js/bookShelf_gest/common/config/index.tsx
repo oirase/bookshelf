@@ -1,9 +1,7 @@
 
-const debug = false
-
 let root: string, topPageRoute: string, bookPageRoute: string
 
-if(debug) {
+if(process.env.NODE_ENV === 'development') {
 
   root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
   topPageRoute = '/bookshelf/'
@@ -21,6 +19,6 @@ if(debug) {
 
 const lodingImage = `${root}image/89-32.gif`
 
-console.log('config root', root)
+//console.log('config root', root)
 
 export { root, topPageRoute, bookPageRoute, lodingImage }

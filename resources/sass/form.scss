@@ -1,9 +1,11 @@
 
 .form {
 
-  $form--bg: #308E77;
+  //$form--bg: #308E77;
+  $form--bg: #006666;
   $form--w: 34rem;
   $form__text--w: 26rem;
+  $focus: #5ACAD5;
 
   width: $form--w;
   margin: 0 auto;
@@ -75,6 +77,10 @@
       @extend .form__label;
       border-radius: 3px;
     }
+
+    &--focus {
+      background: $focus;
+    }
   }
 
   &__checkbox {
@@ -112,7 +118,7 @@
     margin-left: auto;
 
     &:hover {
-      background: #5ACAD5;
+      background: $focus;
     }
 
     &--delete {
@@ -207,4 +213,17 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  &--close {
+    display: none !important;
+  }
+
+  &--open {
+    display: flex !important;
+  }
+
+  &--focus {
+    border-color: $focus;
+  }
+
 }

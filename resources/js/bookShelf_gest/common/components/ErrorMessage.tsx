@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { color } from '@/common/style'
 
 const P = styled.p`
-  color: ${color.red}
+  color: ${color.red};
 `
 
 const ErrorMessage: React.FC = () => {

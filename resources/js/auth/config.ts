@@ -1,20 +1,10 @@
-import handleClick from './handleClick'
-import { toggleDisplay } from './event'
-import { errorSelector } from './constant'
+export const openClass = 'form--open'
+export const closeClass = 'form--close'
+export const closeButtonClass = 'form__button--close'
 
-const configButton = document.getElementById('auth__button--config') || null
-const configForm = document.getElementById('auth__form--config') || null
-const modal = document.getElementById('form__modal') || null
-const modalButtonOpen = document.getElementById('form__modal--open') || null
-const modalButtonClose = document.getElementById('form__modal--close') || null
+export const formFocusClass = 'form--focus'
+export const labelFocusClass = 'form__label--focus'
 
-if(configButton && configForm) {
-  handleClick(configForm, configButton, errorSelector)
-}
+export const errorClass = 'form__error'
 
-if(modal && modalButtonOpen && modalButtonClose) {
-  [modalButtonOpen, modalButtonClose].forEach(ele => ele.addEventListener('click', (e) => { 
-    e.preventDefault()
-    toggleDisplay(modal, 'flex')
-  }))
-}
+export const inputAttrType = ["text", "password", "email", "textarea"]

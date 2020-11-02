@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import { color } from '~/common/style'
 
 const P = styled.p`
-  color: ${color.red}
-  line-height: 1.7;
+  color: ${color.red};
+  //line-height: 1.7;
 `
 
 const ErrorMessage: React.FC = () => {
