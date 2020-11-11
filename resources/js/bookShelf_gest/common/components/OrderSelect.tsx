@@ -5,6 +5,7 @@ const Select = styled.select`
   background: #FFF;
   width: 20rem;
   text-align: center;
+  text-align-last: center;
   padding: 1px 0;
 `
 
