@@ -6,7 +6,7 @@ const Select = styled.select`
   width: 20rem;
   text-align: center;
   text-align-last: center;
-  padding: 1px 0;
+  padding: 10px 0;
 `
 
 interface Props {
