@@ -60,7 +60,7 @@ const SearchBox: React.FC = () => {
 
 	return (
 		<Div>
-			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress}  autoFocus />
+			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress} />
 			<Button onClick={getDataHandleClick}>検索</Button>
 		</Div>
 	)

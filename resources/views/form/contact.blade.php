@@ -5,15 +5,15 @@
 @endsection
 
 @push('js')
-    <script src="{{ asset('js/authView.js') }}" defer></script>
+    <script src="{{ asset('js/changeFormColor.js') }}" defer></script>
 @endpush
-        
+
 @section('content')
-    <div class="form__wrapper--view-fit">
+    <div class="form__wrapper">
         <form class="form" method="POST" action="{{ route('complete') }}" >
             @csrf
             <label class="form__label" for="name">お名前</label>
-            <input class="form__text" id="name" type="text" name="name" value="aaa" required autocomplete="name" autofocus>
+            <input class="form__text" id="name" type="text" name="name" value="aaa" required autocomplete="name" >
             @error('name')
                 <p class="form__error" role="alert">{{ $message }}</p>
             @enderror

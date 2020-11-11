@@ -4,5 +4,6 @@
     "/css/book.css": "/css/book.css",
     "/css/mail.css": "/css/mail.css",
     "/js/authView.js": "/js/authView.js",
+    "/js/changeFormColor.js": "/js/changeFormColor.js",
     "/js/gest.js": "/js/gest.js"
 }
