@@ -2,8 +2,11 @@
 
 @push('meta')
     <link rel="canonical" href="{{ route('index') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
 @endpush
-
+@push('js')
+        <script src="{{ asset('js/app.js') }}" defer></script>
+@endpush
 @auth
     @push('js')
         <script src="{{ asset('js/auth.js') }}" defer></script>
