@@ -6,7 +6,11 @@ const Select = styled.select`
   width: 20rem;
   text-align: center;
   text-align-last: center;
-  padding: 5px 0;
+  padding: 1px 0;
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    background: red;
+  }
 `
 
 interface Props {

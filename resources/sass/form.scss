@@ -14,10 +14,6 @@
     margin-bottom: 2.5rem;
   }
 
-  &--large {
-    //height: 60rem;
-  }
-
   &__wrapper {
     background: $form--bg;
     display: flex;
@@ -27,12 +23,6 @@
     padding: 3.5rem 0 1.6rem 0;
     position: relative;
 
-    &--view-fit {
-      @extend .form__wrapper;
-      height: calc( 100vh - 10rem );
-      padding: 4rem 0;
-      min-height: 56rem;
-    }
   }
 
   &__group {
@@ -128,21 +118,35 @@
 
     &--close {
       border-radius: 5px;
-      color: #FFF;
       border: 1px solid #FFF;
-      padding: 0;
       width: 4rem;
       height: 4rem;
       position: absolute;
       top: 0;
       right: 0;
       background: $red;
-      font-weight: bold;
       margin: 2rem;
-      font-size: 2rem;
-      display: flex;
-      justify-content: center;
-      align-contens: center;
+
+        @at-root %form__button--close-bar {
+          content: "";
+          width: 2px;
+          height: 30px;
+          background: #FFF;
+          position: absolute;
+          top: 50;
+          left: 50;
+
+        }
+
+      &::before {
+        @extend %form__button--close-bar;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        @extend %form__button--close-bar;
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
 
       &:hover {
         background: darken($red, 10%);
@@ -151,18 +155,10 @@
   }
 
   &__textarea {
-    @extend %form__element;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: $form__text--w;
-    background: #FFF;
-    //flex: 0 0 100%;
+    @extend .form__text;
     border-radius: 3px;
     height: 18rem;
-    border: 1px solid $orange;
     padding: 5px;
-
   }
 
   &__a {
@@ -191,15 +187,15 @@
     display: none;
     justify-content: center;
     align-items: center;
-  }
 
-  &__modal__window {
-    background: $form--bg;
-    width: 47rem;
-    max-width: 100%;
-    border: 2px solid $orange;
-    border-radius: 5px;
-    padding: 2rem;
+    &__window {
+      background: $form--bg;
+      width: 47rem;
+      max-width: 100%;
+      border: 2px solid $orange;
+      border-radius: 5px;
+      padding: 2rem;
+    }
   }
 
   &__error {
@@ -221,10 +217,12 @@
 
   &--close {
     display: none !important;
+    //transform: translateY(-100%);
   }
 
   &--open {
     display: flex !important;
+    //transform: translateY(0);
   }
 
   &--focus {

@@ -1,7 +1,7 @@
 <div {{ $attributes->merge([ 'class' => 'form__wrapper' ]) }}>
     <form class="form" action="{{ route('user/update') }}" method="post">
         @csrf
-        <button class="form__button--close" id="form--close">&#x2613;</button>
+        <button class="form__button--close" id="form--close"></button>
         <h3 class="form__header">登録情報の変更</h3>
         <p class="form__p">変更する項目を選んで新しい情報を入力し変更ボタンを押して下さい</p>
         <fieldset class="form__group">
