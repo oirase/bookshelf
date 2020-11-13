@@ -3,7 +3,7 @@
         @csrf
         <button class="form__button--close" id="form--close"></button>
         <label class="form__label" for="email" >{{ __('E-Mail Address') }}</label>
-        <input class="form__text @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+        <input class="form__text @error('email') is-invalid @enderror" id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email">
         @error('email', 'login')
             <p  class="form__error">{{ $errors->login->first('email') }}</p>
         @enderror
