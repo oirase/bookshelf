@@ -5,7 +5,12 @@ const Select = styled.select`
   background: #FFF;
   width: 20rem;
   text-align: center;
+  text-align-last: center;
   padding: 1px 0;
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    padding: 5px 0;
+  }
 `
 
 interface Props {

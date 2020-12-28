@@ -9,7 +9,7 @@ const Select = styled.select`
   padding: 1px 0;
 
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    background: red;
+    padding: 5px 0;
   }
 `
 

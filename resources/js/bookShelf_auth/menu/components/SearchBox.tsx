@@ -23,7 +23,7 @@ const Button = styled.button`
 
 const InputText = styled.input`
   height: 100%;
-  padding: 0 10px;
+  padding: 0 5px;
   width: 14.5rem;
   border: none;
   background: #FFF;
