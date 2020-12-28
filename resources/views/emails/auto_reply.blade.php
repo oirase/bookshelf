@@ -4,36 +4,36 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-           
-html, body, div, span, 
-h1, h2, h3, p, ul, li, 
-footer, header, nav, section { 
- margin:0; 
- padding:0; 
- border:0; 
- outline:0; 
- font-size:100%; 
- vertical-align:baseline; 
- background:transparent; 
+
+html, body, div, span,
+h1, h2, h3, p, ul, li,
+footer, header, nav, section {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ font-size:100%;
+ vertical-align:baseline;
+ background:transparent;
 }
 
-body { 
+body {
  line-height:1;
-} 
-
-footer,header,nav,section { 
- display:block; 
-} 
-
-ul { 
- list-style:none; 
 }
 
-a { 
- margin:0; 
- padding:0; 
- font-size:100%; 
- vertical-align:baseline; 
+footer,header,nav,section {
+ display:block;
+}
+
+ul {
+ list-style:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ font-size:100%;
+ vertical-align:baseline;
  background:transparent;
  cursor: pointer;
 }
@@ -140,8 +140,6 @@ p, li {
             <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">{{ $data['name'] }}</li>
             <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">メールアドレス</li>
             <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">{{ $data['email'] }}</li>
-            <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">件名</li>
-            <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">{{ $data['subject'] }}</li>
             <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">本文</li>
             <li style="margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;letter-spacing: 3px;margin-bottom: 20px;text-align: center;">{{ $data['body'] }}</li>
         </ul>

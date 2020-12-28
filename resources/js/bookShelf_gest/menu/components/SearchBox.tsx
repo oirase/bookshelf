@@ -5,7 +5,7 @@ import { setSearchSelectPage } from '@/search/store/SearchSelectPage'
 import { setSearchWord } from '@/menu/store/SearchWord'
 import { changeSearchMode } from '@/menu/store/SearchMode'
 import styled from 'styled-components'
-import color from '@/common/style/color'
+import { color } from '@/common/style'
 
 const Div = styled.div`
   height: 2.8rem;

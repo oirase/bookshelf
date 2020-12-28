@@ -8,8 +8,6 @@ Bookshelfにお問い合わせ頂きありがとうございます
 {{ $data['name'] }}
 メールアドレス
 {{ $data['email'] }}
-件名
-{{ $data['subject'] }}
 本文
 {{ $data['body'] }}
 

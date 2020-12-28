@@ -4,6 +4,7 @@ export const color = {
 	yellow: '#FFCC00',
 	green: '#66CC33',
 	orange: '#FF9900',
+  brown: '#990000',
 	user: '#FFBB77',
 	//user: '#FFC49B',
 	//search: '#5DD0F6',

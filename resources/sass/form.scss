@@ -39,7 +39,7 @@
   &__label {
     display: inline-block;
     padding: 0.8rem 1.5rem;
-    background: $red;
+    background: $add;
     border-radius: 3px 3px 0 0;
     color: #FFF;
     margin-left: ($form--w - $form__text--w) / 2;
@@ -98,7 +98,7 @@
     @extend %form__element;
     height: 4.2rem;
     padding: 0 1.6rem;
-    background: $orange;
+    background: $add;
     border-radius: 5px;
     color: #FFF;
     border: 1px solid #FFF;

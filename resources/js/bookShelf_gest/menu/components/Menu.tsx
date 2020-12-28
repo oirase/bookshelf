@@ -4,9 +4,10 @@ import ChangeModeButton from '@/menu/components/ChangeModeButton'
 import SearchOrderSelect from '@/search/components/SearchOrderSelect'
 import styled from 'styled-components'
 //import { CangeModeContext } from '@/main/components/BookListPage'
+import { color } from '@/common/style'
 
 const Nav = styled.nav`
-  background: #990000;
+  background: ${color.brown};
   color: #FFF;
   padding-top: 1.7rem;
   height: 14rem;

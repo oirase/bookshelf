@@ -22,11 +22,6 @@
             @error('email')
                 <p class="form__error" role="alert">{{ $message }}</p>
             @enderror
-            <label class="form__label" for="subject">件名</label>
-            <input class="form__text" id="subject" type="text" name="subject" value="subject">
-            @error('subject')
-                <p class="form__error" role="alert">{{ $message }}</p>
-            @enderror
             <label class="form__label--textarea" for="body">お問い合わせ本文</label>
             <textarea class="form__textarea" name="body" id="body">text</textarea>
             @error('body')
