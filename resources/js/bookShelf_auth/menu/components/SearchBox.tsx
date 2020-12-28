@@ -23,7 +23,7 @@ const Button = styled.button`
 
 const InputText = styled.input`
   height: 100%;
-  padding: 0 6px;
+  padding: 0 10px;
   width: 14.5rem;
   border: none;
   background: #FFF;
@@ -33,13 +33,13 @@ const SearchBox: React.FC = () => {
 
 	const searchWord = useSelector((state: Store) => state.SearchWord)
 	const searchMode = useSelector((state: Store) => state.SearchMode)
-  
+
 	const searchInput = React.useRef<HTMLInputElement>(null)
 	const dispatch = useDispatch()
 
 	const getDataHandleClick = () => {
 		if(searchInput.current == null || !searchInput.current.value) return
-      
+
 		searchMode || dispatch(changeSearchMode(true))
 		dispatch(setSearchWord(searchInput.current.value))
 		dispatch(setSearchSelectPage(1))
@@ -60,7 +60,7 @@ const SearchBox: React.FC = () => {
 
 	return (
 		<Div>
-			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress}  autoFocus />
+			<InputText type="text" name="searchWord" ref={searchInput} onKeyPress={keyPress} />
 			<Button onClick={getDataHandleClick}>検索</Button>
 		</Div>
 	)
