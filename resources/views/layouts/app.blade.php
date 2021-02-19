@@ -16,12 +16,13 @@
         <meta name="msapplication-TileColor" content="#ffc40d">
         <meta name="theme-color" content="#ffffff">
         @stack('js')
+        <link rel="manifest" href="/manifest.json">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         @stack('css')
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icon/apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icon/favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icon/favicon-16x16.png') }}">
-        <link rel="manifest" href="{{ asset('icon/site.webmanifest') }}">
+        {{-- <link rel="manifest" href="{{ asset('icon/site.webmanifest') }}"> --}}
         <link rel="mask-icon" href="{{ asset('icon/safari-pinned-tab.svg" color="#5bbad5') }}">
         @if(Route::currentRouteName() == 'index')
             <title>Bookshelf</title>
@@ -38,7 +39,6 @@
         @yield('content')
     </div>
     <x-footer class="footer">
-        <x-share-button />
     </x-footer>
     </body>
 </html>
