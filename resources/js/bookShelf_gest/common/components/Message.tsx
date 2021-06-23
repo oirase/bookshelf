@@ -4,12 +4,13 @@ import Loding from '@/common/components/Loding'
 import styled from 'styled-components'
 
 const Div = styled.div`
-  height: 7rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   text-align: center;
   //line-height: 2.5;
   line-height: 1.7;
+  padding-top: 2rem;
 `
 
 const P = styled.p`

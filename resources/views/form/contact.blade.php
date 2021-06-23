@@ -13,17 +13,17 @@
         <form class="form" method="POST" action="{{ route('complete') }}" >
             @csrf
             <label class="form__label" for="name">お名前</label>
-            <input class="form__text" id="name" type="text" name="name" value="aaa" required autocomplete="name" >
+            <input class="form__text" id="name" type="text" name="name" required autocomplete="name" >
             @error('name')
                 <p class="form__error" role="alert">{{ $message }}</p>
             @enderror
             <label  class="form__label" for="email">メールアドレス</label>
-            <input class="form__text" id="email" type="email" name="email" value="mahoganyshelf@outlook.com" required autocomplete="email">
+            <input class="form__text" id="email" type="email" name="email" required autocomplete="email">
             @error('email')
                 <p class="form__error" role="alert">{{ $message }}</p>
             @enderror
             <label class="form__label--textarea" for="body">お問い合わせ本文</label>
-            <textarea class="form__textarea" name="body" id="body">text</textarea>
+            <textarea class="form__textarea" name="body" id="body"></textarea>
             @error('body')
                 <p class="form__error" role="alert">{{ $message }}</p>
             @enderror

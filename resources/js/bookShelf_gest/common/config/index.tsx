@@ -1,19 +1,9 @@
 
 let root: string, topPageRoute: string, bookPageRoute: string
 
-if(process.env.NODE_ENV === 'development') {
-
-  root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
-  topPageRoute = '/bookshelf/'
-  bookPageRoute = '/bookshelf/book'
-
-} else {
-
-  root = 'https://bookshelf-booksearch.herokuapp.com/'
-  topPageRoute = '/'
-  bookPageRoute = '/book'
-
-}
+root = 'https://bookshelf-booksearch.com/'
+topPageRoute = '/'
+bookPageRoute = '/book'
 
 //const root = 'http://networkdesign.s1005.xrea.com/bookshelf/'
 

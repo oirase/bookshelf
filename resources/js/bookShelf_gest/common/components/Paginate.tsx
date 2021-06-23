@@ -22,7 +22,7 @@ const Ul = styled.ul`
   margin-bottom: 1.5rem;
 `
 
-const Li = styled.li<{ selectPage: number, value : number }>`
+const Li = styled.li<{ selectPage: number, innerValue : string | number }>`
   width: 3.4rem;
   height: 3.4rem;
   display: flex;
@@ -31,7 +31,7 @@ const Li = styled.li<{ selectPage: number, value : number }>`
   text-align: center;
   align-items: center;
   border: 1px solid #FFF;
-  background: ${(props) => props.selectPage === props.value ? color.red : color.yellow};
+  background: ${(props) => props.selectPage === props.innerValue ? color.red : color.yellow};
   color: #FFF;
 
   &:hover {
@@ -70,27 +70,34 @@ const Paginate: React.FC<Props> = React.memo(({ totalItems, selectPage, handleCl
 		endPage = totalPage
 	}
 
-	const backPage = startPage - 10
+	const backnumber = startPage - 10
 
 	const PageList = []
 
-	const makePageItem = (PageNumber: number) => (
-		<Li
-			key={PageNumber}
-			onClick={()=>{handleClick(PageNumber)}}
-			value={PageNumber}
-			selectPage={selectPage}
-		>
-			{PageNumber}
-		</Li>
-	)
+	const makePageItem = (
+    pageNumber: number,
+    key: number | string | null = null,
+    content: React.ReactNode = null
+  ) => {
+      return (
+      		<Li
+      			key={key ?? pageNumber}
+      			onClick={()=>{handleClick(pageNumber)}}
+      			innerValue={pageNumber}
+      			selectPage={selectPage}
+            //dangerouslySetInnerHTML={{ __html: content ?? pageNumber }}
+      		>
+          {content ? content : pageNumber }
+          </Li>
+      )
+    }
 
 	for( let i = startPage; i <= endPage; ++i) {
 		PageList.push(makePageItem(i))
 	}
 
 	if(selectPage >= 20) {
-		PageList.unshift(makePageItem(backPage))
+		PageList.unshift(makePageItem(backnumber))
 	}
 
 	if(selectPage >= 10) {
@@ -100,6 +107,17 @@ const Paginate: React.FC<Props> = React.memo(({ totalItems, selectPage, handleCl
 	if(endPage !== totalPage) {
 		PageList.push(makePageItem(totalPage))
 	}
+
+   if (selectPage !== 1) {
+    const backPage = selectPage - 1
+    const backIcon = <span>&#9664;</span>
+    PageList.unshift(makePageItem(backPage, '&#9664;', backIcon))
+  }
+  if (selectPage !== endPage) {
+    const nextPage = selectPage + 1
+    const nextIcon = <span>&#9654;</span>
+    PageList.push(makePageItem(nextPage, '&#9654;', nextIcon))
+  }
 
 	const index = Math.ceil(PageList.length / 2)
 
